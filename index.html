@@ -316,6 +316,16 @@ footer{font-size:.84rem}
 .brand .coin img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 0 0 1px rgba(201,164,92,.55)}
 .brand .coin img.bk{transform:rotateY(180deg)}
 @keyframes coinspin{to{transform:rotateY(360deg)}}
+
+/* ---- v10: mobilde öne çıkan kartlar net ayrışsın ---- */
+@media(max-width:520px){
+  .cards{gap:30px}
+  .card{border:1px solid rgba(201,164,92,.4);background:rgba(255,255,255,.04);padding-bottom:24px}
+  .card .ph{aspect-ratio:4/3}
+  .card h3{margin-top:20px}
+  .card h3,.card p,.card .price{margin-left:22px;margin-right:22px}
+  .card .price{display:block;margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,164,92,.3);font-size:1.5rem}
+}
 </style>
 </head>
 <body>
@@ -560,7 +570,7 @@ function renderTabs(){
 }
 function renderCards(){
   const t=[-6,4,-3,6];
-  $('#cards').innerHTML=SIG.map(([n,d,p,im],i)=>`<div class="card rv">${ph(im,t[i])}<div class="n">0${i+1}</div><h3>${n}</h3><p>${d}</p><span class="price">${fmt(p)}</span></div>`).join('');
+  $('#cards').innerHTML=SIG.map(([n,d,p,im],i)=>`<div class="card rv">${ph(im,t[i])}<h3>${n}</h3><p>${d}</p><span class="price">${fmt(p)}</span></div>`).join('');
   document.querySelectorAll('#cards .rv').forEach(el=>io.observe(el));
 }
 function renderGallery(){
