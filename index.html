@@ -1,656 +1,2205 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Suat'ın Yeri Öz Balık Restaurant · Atakum, Samsun</title>
-<meta name="description" content="Samsun Atakum'da taze balık ve deniz ürünleri. Suat'ın Yeri Öz Balık Restaurant.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#0a2342; --ink-2:#12335c; --navy:#0a2342; --sea:#1d6a8a; --foam:#e9f2f4; --coral:#e2674a;
-  --line:rgba(201,164,92,.38);
-  --ivory:#f7f2e9; --paper:#efe7d6; --text:#14233a; --muted:#5b6b80;
-  --gold:#c9a45c; --gold-d:#9a7a35;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;font-weight:300;color:var(--text);background:var(--ivory);line-height:1.75;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;line-height:1.1}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-section{padding:120px 0;position:relative}
-.eyebrow{font-size:.7rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);font-weight:400}
-.rule{width:56px;height:1px;background:var(--gold);margin:22px auto}
-.center{text-align:center}
-h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:300;letter-spacing:.01em}
-h2 em{font-style:italic;color:var(--gold-d)}
-.dark{background:var(--ink);color:var(--ivory)}
-.dark h2 em{color:var(--gold)}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suat'ın Yeri Öz Balık Restaurant · Atakum, Samsun</title>
+  <meta name="description" content="Samsun Atakum'da taze balık ve deniz ürünleri. Suat'ın Yeri Öz Balık Restaurant.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a2342;
+      --ink-2: #12335c;
+      --navy: #0a2342;
+      --sea: #1d6a8a;
+      --foam: #e9f2f4;
+      --coral: #e2674a;
+      --line: rgba(201, 164, 92, .38);
+      --ivory: #f7f2e9;
+      --paper: #efe7d6;
+      --text: #14233a;
+      --muted: #5b6b80;
+      --gold: #c9a45c;
+      --gold-d: #9a7a35;
+    }
 
-/* nav */
-nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:.4s}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
-nav.solid{background:rgba(10,35,66,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav.solid .wrap{height:68px}
-.brand{color:var(--ivory);text-align:left;line-height:1.1;display:flex;align-items:center;gap:14px}
-.brand img{width:46px;height:46px;border-radius:50%;display:block}
-.brand div{display:block}
-.brand b{display:block;font:400 1.35rem 'Cormorant Garamond',serif;letter-spacing:.2em;text-transform:uppercase}
-.brand span{font-size:.55rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
-.links{display:flex;gap:34px;align-items:center}
-.links a{color:rgba(245,240,230,.78);font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:400;transition:.25s}
-.links a:hover{color:var(--gold)}
-.lang{border:1px solid var(--line);background:none;color:var(--ivory);font:400 .66rem Inter;letter-spacing:.2em;padding:7px 14px;cursor:pointer;transition:.25s}
-.lang:hover{border-color:var(--gold);color:var(--gold)}
-.burger{display:none;background:none;border:0;color:var(--ivory);font-size:1.6rem;cursor:pointer}
-.btn{display:inline-block;padding:16px 38px;font:400 .7rem Inter;letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--gold);color:var(--ivory);background:transparent;cursor:pointer;transition:.35s}
-.btn:hover{background:var(--gold);color:var(--ink)}
-.btn.fill{background:var(--gold);color:var(--ink)}
-.btn.fill:hover{background:transparent;color:var(--gold)}
-.btn.dk{color:var(--ink);border-color:var(--gold-d)}
-.btn.dk:hover{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-/* hero */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ivory);position:relative;overflow:hidden;padding:140px 0 120px;
-  background:radial-gradient(ellipse at 50% 115%,rgba(29,106,138,.75) 0%,rgba(29,106,138,0) 62%),linear-gradient(180deg,#0a2342 0%,#0d2b52 100%)}
-.hero .bg{position:absolute;inset:0;background:linear-gradient(rgba(10,35,66,.66),rgba(10,35,66,.84)),url(img/hero.jpg) 18% center/cover no-repeat}
-.hero .lines{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 119px,rgba(201,164,92,.07) 119px 120px);pointer-events:none}
-.hero .fishline{position:absolute;left:50%;top:50%;width:min(900px,120vw);transform:translate(-50%,-50%);opacity:.07}
-.hero .wrap{position:relative;z-index:2}
-.hero h1{font-size:clamp(3.2rem,9vw,7.2rem);font-weight:300;letter-spacing:.01em;margin:26px 0 8px}
-.hero h1 em{font-style:italic;color:var(--gold)}
-.hero p.sub{max-width:460px;margin:20px auto 44px;color:rgba(245,240,230,.7);font-size:.98rem}
-.scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;color:var(--gold);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:12px}
-.scroll i{display:block;width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:drop 2.4s ease-in-out infinite}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* image placeholder: data-img ile gerçek foto verin */
-.ph{position:relative;overflow:hidden;background-size:cover;background-position:center;background:var(--ink-2)}
-.ph svg{position:absolute;inset:0;width:100%;height:100%}
-.ph .tag{position:absolute;left:14px;bottom:12px;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,240,230,.55)}
-.ph::after{content:"";position:absolute;inset:10px;border:1px solid rgba(201,164,92,.28);pointer-events:none}
-.ph.has-img svg,.ph.has-img .tag{display:none}
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--ivory);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased
+    }
 
-/* philosophy */
-.phil p.big{font:300 clamp(1.6rem,3.4vw,2.5rem)/1.45 'Cormorant Garamond',serif;max-width:780px;margin:0 auto;color:#262a30}
-.phil p.big em{color:var(--gold-d)}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-top:90px}
-.cols .ph{aspect-ratio:4/5}
-.cols p{color:var(--muted);margin-top:18px;max-width:440px}
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.1
+    }
 
-/* signature */
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:70px}
-.card .ph{aspect-ratio:1/1}
-.card .n{font:300 .8rem Inter;letter-spacing:.3em;color:var(--gold);margin:22px 0 8px}
-.card h3{font-size:1.7rem;font-weight:400}
-.card p{font-size:.84rem;color:rgba(245,240,230,.55);margin:6px 0 10px}
-.card .price{font:400 1.3rem 'Cormorant Garamond',serif;color:var(--gold)}
+    a {
+      color: inherit;
+      text-decoration: none
+    }
 
-/* menu */
-.menu{background:var(--paper)}
-.tabs{display:flex;gap:34px;overflow-x:auto;justify-content:center;padding:6px 4px 14px;margin-top:46px;border-bottom:1px solid rgba(26,29,34,.12);scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;background:none;border:0;border-bottom:1px solid transparent;margin-bottom:-15px;padding:0 0 14px;font:400 .68rem Inter;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);cursor:pointer;transition:.25s}
-.tab:hover{color:var(--text)}
-.tab.on{color:var(--text);border-bottom-color:var(--gold-d)}
-.card-menu{max-width:1040px;margin:44px auto 0;background:#fffdf8;padding:12px;box-shadow:0 30px 60px -34px rgba(0,0,0,.35)}
-.card-menu .inner{border:1px solid var(--gold);padding:46px 56px}
-.items{display:grid;grid-template-columns:1fr;gap:0}
-.item{padding:20px 0;border-bottom:1px solid rgba(26,29,34,.08)}
-.item:last-child{border-bottom:0}
-.item .row{display:flex;align-items:baseline;gap:14px}
-.item h4{font:400 1.45rem 'Cormorant Garamond',serif}
-.item .dots{flex:1;border-bottom:1px dotted rgba(26,29,34,.3);transform:translateY(-5px)}
-.item .p{font:500 1.35rem 'Cormorant Garamond',serif;color:var(--gold-d);white-space:nowrap}
-.item small{display:block;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.02rem;color:var(--muted);margin-top:2px;max-width:82%}
-.note{font-size:.76rem;color:var(--muted);text-align:center;margin-top:34px;letter-spacing:.04em}
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
 
-/* gallery */
-.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:16px;margin-top:70px}
-.gallery .ph:nth-child(1){grid-column:span 5;grid-row:span 3}
-.gallery .ph:nth-child(2){grid-column:span 4;grid-row:span 2}
-.gallery .ph:nth-child(3){grid-column:span 3;grid-row:span 2}
-.gallery .ph:nth-child(4){grid-column:span 3;grid-row:span 1}
-.gallery .ph:nth-child(5){grid-column:span 4;grid-row:span 1}
-.gallery .ph:nth-child(6){grid-column:span 12;grid-row:span 2}
+    section {
+      padding: 120px 0;
+      position: relative
+    }
 
-/* visit */
-.visit .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:70px;align-items:stretch}
-.info{display:grid;gap:34px;align-content:center}
-.info h3{font:400 .66rem Inter;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px}
-.info p{font:300 1.35rem/1.45 'Cormorant Garamond',serif}
-.info a:hover{color:var(--gold-d)}
-.map{background:var(--ink);min-height:420px;position:relative;display:grid;place-items:center;text-align:center;color:var(--ivory);padding:30px}
-.map::after{content:"";position:absolute;inset:12px;border:1px solid rgba(201,164,92,.3);pointer-events:none}
-.map svg{position:absolute;inset:0;width:100%;height:100%;opacity:.4}
-.map .inner{position:relative}
-.pin{width:14px;height:14px;border-radius:50%;background:var(--gold);margin:0 auto 22px;box-shadow:0 0 0 8px rgba(201,164,92,.18),0 0 0 18px rgba(201,164,92,.08)}
-.map h3{font-size:2rem;font-weight:300}
-.map p{color:var(--gold);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;margin:12px 0 28px}
+    .eyebrow {
+      font-size: .7rem;
+      letter-spacing: .38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 400
+    }
 
-footer{background:var(--ink);color:rgba(245,240,230,.6);padding:60px 0 44px;text-align:center;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
-footer .brand{text-align:center;margin-bottom:22px}
-footer .brand b{font-size:1.5rem}
-footer .sep{width:56px;height:1px;background:var(--gold);margin:0 auto 22px;opacity:.6}
-.wa{position:fixed;right:22px;bottom:22px;z-index:60;background:var(--ink);color:var(--gold);border:1px solid var(--gold);padding:13px 22px;font:400 .64rem Inter;letter-spacing:.28em;text-transform:uppercase;transition:.3s}
-.wa:hover{background:var(--gold);color:var(--ink)}
+    .rule {
+      width: 56px;
+      height: 1px;
+      background: var(--gold);
+      margin: 22px auto
+    }
 
-.rv{opacity:0;transform:translateY(26px);transition:opacity 1s ease,transform 1s ease}
-.rv.in{opacity:1;transform:none}
+    .center {
+      text-align: center
+    }
 
-@media(max-width:900px){
-  section{padding:84px 0}
-  .links{position:fixed;inset:68px 0 auto 0;background:var(--ink);flex-direction:column;padding:34px;gap:26px;display:none;border-bottom:1px solid var(--line)}
-  .links.open{display:flex}
-  .burger{display:block}
-  nav .wrap{height:70px}
-  .cols,.visit .grid{grid-template-columns:1fr;gap:44px}
-  .cards{grid-template-columns:1fr 1fr;gap:18px}
-  .card-menu .inner{padding:26px 22px}
-  .tabs{justify-content:flex-start;gap:26px}
-  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:12px}
-  .gallery .ph:nth-child(n){grid-column:span 1;grid-row:span 1}
-  .gallery .ph:nth-child(1),.gallery .ph:nth-child(6){grid-column:span 2;grid-row:span 2}
-  .item small{max-width:100%}
-}
-@media(max-width:520px){.cards{grid-template-columns:1fr}.hero{padding-top:120px}}
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 300;
+      letter-spacing: .01em
+    }
 
-/* ---- eski renk paleti + uyum düzeltmeleri ---- */
-.eyebrow{color:var(--coral)}
-.dark .eyebrow,.hero .eyebrow,.map p{color:var(--gold)}
-h2 em,.phil p.big em{color:var(--sea)}
-.dark h2 em{color:var(--gold)}
-.item .p{color:var(--coral)}
-.card .n{color:var(--gold)}
-.visit{background:var(--foam)}
-.info h3{color:var(--sea)}
-.tab.on{border-bottom-color:var(--coral)}
-.tabs{flex-wrap:wrap;justify-content:center;overflow:visible;gap:6px 30px;border-bottom:1px solid rgba(20,35,58,.14);padding:0 0 10px}
-.tab{margin-bottom:0;padding:8px 0}
-.items{grid-template-columns:1fr 1fr;column-gap:64px}
-.item:nth-last-child(2):nth-child(odd){border-bottom:0}
-@media(max-width:1000px){.items{grid-template-columns:1fr}.tabs{gap:4px 22px}}
-@media(max-width:560px){
-  .tabs{gap:2px 16px;justify-content:flex-start}
-  .tab{font-size:.62rem;letter-spacing:.16em;padding:7px 0}
-  .card-menu{padding:8px}
-  .card-menu .inner{padding:14px 16px}
-  .item h4{font-size:1.25rem}.item .p{font-size:1.2rem}
-  .wrap{padding:0 20px}
-  h2{font-size:2.1rem}
-  .wa{left:0;right:0;bottom:0;text-align:center;border-width:1px 0 0;padding:15px}
-  footer{padding-bottom:90px}
-  .hero h1{font-size:3.1rem}
-}
+    h2 em {
+      font-style: italic;
+      color: var(--gold-d)
+    }
 
-/* ---- fotoğraflar ---- */
-.band{background:var(--navy);color:var(--ivory);text-align:center;padding:64px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.band h2{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--ivory)}
-.band h2 em{color:var(--gold)}
-.band p.s{max-width:520px;margin:6px auto 0;color:rgba(247,242,233,.75)}
-.item.has-th{display:flex;gap:20px;align-items:center}
-.item .main{flex:1;min-width:0}
-.th{width:84px;height:84px;object-fit:cover;flex:none;border:1px solid var(--gold);padding:3px;background:#fffdf8}
-.ph.has-img{transition:.5s}
-.gallery .ph.has-img{filter:saturate(1.02)}
-footer .brand{justify-content:center;flex-direction:column;gap:12px}
-footer .brand .coinw{width:78px;height:78px}
-@media(max-width:560px){.th{width:62px;height:62px}.item.has-th{gap:14px}.brand .coinw{width:40px;height:40px}.brand b{font-size:1.1rem}}
+    .dark {
+      background: var(--ink);
+      color: var(--ivory)
+    }
 
-/* ---- misafirlerimiz ---- */
-.guests{background:var(--ivory)}
-.masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
-.masonry figure{aspect-ratio:5/4;margin:0;padding:9px;background:#fffdf8;border:1px solid rgba(201,164,92,.55);box-shadow:0 22px 40px -28px rgba(10,35,66,.5)}
-.masonry img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;transition:.4s}
-.masonry figure:hover img{filter:brightness(1.05)}
-.lb{position:fixed;inset:0;background:rgba(6,18,36,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out}
-.lb.open{display:flex}
-.lb img{max-width:100%;max-height:100%;object-fit:contain;border:1px solid var(--gold);padding:6px;background:#fffdf8}
-.lbx{position:absolute;top:14px;right:22px;background:none;border:0;color:var(--ivory);font-size:2.4rem;line-height:1;cursor:pointer}
-@media(max-width:1100px){.links{gap:22px}.links a{letter-spacing:.2em}}
-@media(max-width:900px){.masonry{grid-template-columns:1fr 1fr;gap:12px}.masonry figure{padding:6px}}
+    .dark h2 em {
+      color: var(--gold)
+    }
 
-/* ---- v7: sekmeler, büyütme, ikon, yorumlar ---- */
-.tabs{display:flex;flex-direction:column;align-items:center;gap:2px;overflow:visible;border-bottom:1px solid rgba(20,35,58,.14);padding:0 0 12px}
-.tabrow{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 30px}
-.th{cursor:zoom-in;transition:transform .28s ease,box-shadow .28s ease;position:relative;z-index:1;transform-origin:left center}
-@media(hover:hover){.th:hover{transform:scale(2.4);z-index:8;box-shadow:0 22px 44px -10px rgba(10,35,66,.55)}}
-.th:focus-visible{outline:2px solid var(--coral);outline-offset:2px}
-.lb{flex-direction:column;gap:14px}
-.lb img{max-height:calc(100% - 52px)}
-.lbc{color:var(--ivory);font:400 1.6rem 'Cormorant Garamond',serif;letter-spacing:.04em;min-height:1em}
-.ig{display:inline-flex;align-items:center;gap:.5em}
-.ig:hover{color:var(--gold-d)}
-footer .ig:hover{color:var(--gold)}
-.rgrid{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;margin-top:60px}
-.rcard{flex:0 1 calc(33.333% - 15px);min-width:260px;margin:0;padding:34px 30px 28px;background:var(--ink-2);border:1px solid var(--line);text-align:center;display:flex;flex-direction:column;align-items:center}
-.rcard .stars{display:flex;gap:4px;color:var(--gold);margin-bottom:18px}
-.rcard .stars svg{width:18px;height:18px}
-.rcard blockquote{font:italic 400 1.45rem/1.4 'Cormorant Garamond',serif;color:var(--ivory);flex:1}
-.rcard figcaption{margin-top:20px;font:400 .62rem Inter;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
-@media(max-width:700px){.rcard{flex:1 1 100%}}
-@media(max-width:560px){.tabrow{gap:2px 16px}}
+    /* nav */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      transition: .4s
+    }
 
-.rsum{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:34px}
-.rsum .big{font:300 3.4rem/1 'Cormorant Garamond',serif;color:var(--gold)}
-.rsum .stars{display:flex;gap:3px;color:var(--gold)}
-.rsum .stars svg{width:17px;height:17px}
-.rsum .sub{font:400 .68rem Inter;letter-spacing:.26em;text-transform:uppercase;color:rgba(247,242,233,.78)}
+    nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 84px
+    }
 
-/* ---- v8: okunabilirlik ---- */
-section{scroll-margin-top:68px}
-.eyebrow{font-size:.82rem;letter-spacing:.28em}
-.links a{font-size:.82rem;letter-spacing:.18em;color:rgba(247,242,233,.94)}
-.lang{font-size:.78rem}
-.brand span{font-size:.66rem;letter-spacing:.32em}
-.btn{font-size:.84rem;letter-spacing:.22em}
-.tab{font-size:.82rem;letter-spacing:.18em;color:#46526a}
-.tab.on{color:var(--text)}
-.card .n{font-size:.9rem}
-.card p{font-size:.98rem;color:rgba(247,242,233,.82)}
-.info h3{font-size:.78rem}
-.rcard figcaption{font-size:.74rem}
-.ph .tag{font-size:.7rem}
-.scroll{font-size:.72rem}
-.lbc{font-size:1.8rem}
-footer{font-size:.84rem}
-.wa{font-size:.8rem}
-.note{font-size:.9rem;color:#4f5a6e}
-.item small{font-size:1.12rem}
-.lead{font-size:1.06rem}
-.hero p.sub{font-size:1.06rem;color:rgba(247,242,233,.85)}
-@media(max-width:560px){
-  .tab{font-size:.72rem;letter-spacing:.1em}
-  .tabrow{gap:2px 14px}
-  .eyebrow{font-size:.78rem}
-  .brand span{font-size:.6rem}
-}
+    nav.solid {
+      background: rgba(10, 35, 66, .94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line)
+    }
 
-/* ---- Wi-Fi düğmesi / pencere ---- */
-.chip{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid var(--gold-d);color:var(--text);padding:11px 22px;border-radius:99px;font:500 .8rem Inter;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.25s}
-.chip:hover{background:var(--navy);color:var(--ivory);border-color:var(--navy)}
-.chip svg{width:20px;height:20px}
-.md{position:fixed;inset:0;background:rgba(6,18,36,.88);z-index:110;display:none;align-items:center;justify-content:center;padding:24px}
-.md.open{display:flex}
-.mc{position:relative;background:var(--ivory);border:1px solid var(--gold);padding:44px 40px 36px;max-width:420px;width:100%;text-align:center}
-.mc .lbx{color:var(--text);top:6px;right:12px}
-.mc h3{font-size:2rem;font-weight:400;margin-bottom:18px;color:var(--navy)}
-.wr{margin-bottom:18px}
-.wr small{display:block;font:400 .74rem Inter;letter-spacing:.26em;text-transform:uppercase;color:var(--sea);margin-bottom:4px}
-.wr b{font:500 1.7rem 'Cormorant Garamond',serif;word-break:break-all}
-.wn{font:italic 400 1.35rem/1.4 'Cormorant Garamond',serif;color:var(--text)}
+    nav.solid .wrap {
+      height: 68px
+    }
 
-/* ---- mobil eylem çubuğu + hero fotoğrafı ---- */
-.abar,.hero-photo{display:none}
-@media(max-width:900px){
-  .abar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(10,35,66,.97);border-top:1px solid var(--line);padding:4px 2px calc(4px + env(safe-area-inset-bottom))}
-  .abar a,.abar button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--ivory);background:none;border:0;padding:8px 2px;font:500 .72rem Inter;letter-spacing:.02em;cursor:pointer}
-  .abar svg{width:23px;height:23px;color:var(--gold)}
-  .abar a:active,.abar button:active{background:rgba(255,255,255,.08)}
-  .wa{display:none}
-  footer{padding-bottom:110px}
-  .hero{flex-direction:column;justify-content:center;gap:38px;padding:108px 0 60px}
-  .hero .wrap{width:100%}
-  .hero .bg{background:linear-gradient(rgba(10,35,66,.55),rgba(10,35,66,.92))}
-  .hero-photo{display:block;position:relative;z-index:2;width:calc(100% - 40px);max-width:600px;aspect-ratio:16/10;background:url(img/hero_photo.jpg) center/cover no-repeat;border:1px solid var(--gold);box-shadow:0 24px 50px -20px rgba(0,0,0,.6)}
-  .hero-photo::after{content:"";position:absolute;inset:7px;border:1px solid rgba(201,164,92,.35)}
-  .scroll{display:none}
-}
+    .brand {
+      color: var(--ivory);
+      text-align: left;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 14px
+    }
 
-/* ---- v9: mobil hero tam ekran ---- */
-@media(max-width:900px){
-  .hero{display:flex;flex-direction:column;justify-content:flex-end;min-height:100svh;padding:0 0 96px;gap:0}
-  .hero .bg{position:absolute;left:0;right:0;top:0;bottom:auto;height:70%;background:linear-gradient(180deg,rgba(10,35,66,.45) 0,rgba(10,35,66,.05) 22%,rgba(10,35,66,.6) 100%),url(img/hero.jpg) 0 center/cover no-repeat;-webkit-mask-image:linear-gradient(#000 62%,transparent);mask-image:linear-gradient(#000 62%,transparent)}
-  .hero-photo{display:none}
-  .hero h1{font-size:clamp(3rem,13vw,4.6rem)}
-  .hero .wrap{padding-bottom:0}
-  .scroll{display:none}
-}
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: block
+    }
 
-/* ---- dönen madeni para logo ---- */
-.coinw{display:block;width:46px;height:46px;flex:none;perspective:500px}
-.coin{display:block;position:relative;width:100%;height:100%;transform-style:preserve-3d;animation:coinspin 10s linear infinite}
-.brand .coin img{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 0 0 1px rgba(201,164,92,.55)}
-.brand .coin img.bk{transform:rotateY(180deg)}
-@keyframes coinspin{to{transform:rotateY(360deg)}}
+    .brand div {
+      display: block
+    }
 
-/* ---- v10: mobilde öne çıkan kartlar net ayrışsın ---- */
-@media(max-width:520px){
-  .cards{gap:30px}
-  .card{border:1px solid rgba(201,164,92,.4);background:rgba(255,255,255,.04);padding-bottom:24px}
-  .card .ph{aspect-ratio:4/3}
-  .card h3{margin-top:20px}
-  .card h3,.card p,.card .price{margin-left:22px;margin-right:22px}
-  .card .price{display:block;margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,164,92,.3);font-size:1.5rem}
-}
+    .brand b {
+      display: block;
+      font: 400 1.35rem 'Cormorant Garamond', serif;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
 
-/* ---- v11: yer tutucu simgeler + büyük başlık çubuğu ---- */
-.th-ph{width:84px;height:84px;flex:none;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,164,92,.45);background:linear-gradient(160deg,#12305a,#0a2342);color:var(--gold)}
-.th-ph svg{width:46%;height:46%}
-@media(max-width:560px){.th-ph{width:62px;height:62px}}
-@media(min-width:1201px){
-  nav .wrap{height:108px;width:min(1500px,94vw);max-width:none}
-  nav.solid .wrap{height:80px}
-  .brand .coinw{width:60px;height:60px}
-  .brand b{font-size:1.75rem}
-  .brand span{font-size:.7rem}
-  .links{gap:38px}
-  .links a{font-size:.92rem}
-  .lang{font-size:.88rem;padding:8px 16px}
-}
-@media(min-width:1201px) and (max-width:1380px){.links{gap:24px}.links a{font-size:.84rem;letter-spacing:.14em}.brand b{font-size:1.5rem}.brand span{font-size:.62rem}}
-@media(min-width:901px) and (max-width:1200px){.links{gap:16px}.links a{font-size:.74rem;letter-spacing:.1em}.brand b{font-size:1.15rem;letter-spacing:.14em}.brand span{font-size:.5rem;letter-spacing:.3em}}
-</style>
+    .brand span {
+      font-size: .55rem;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    .links {
+      display: flex;
+      gap: 34px;
+      align-items: center
+    }
+
+    .links a {
+      color: rgba(245, 240, 230, .78);
+      font-size: .7rem;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: .25s
+    }
+
+    .links a:hover {
+      color: var(--gold)
+    }
+
+    .lang {
+      border: 1px solid var(--line);
+      background: none;
+      color: var(--ivory);
+      font: 400 .66rem Inter;
+      letter-spacing: .2em;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: .25s
+    }
+
+    .lang:hover {
+      border-color: var(--gold);
+      color: var(--gold)
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--ivory);
+      font-size: 1.6rem;
+      cursor: pointer
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 38px;
+      font: 400 .7rem Inter;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      color: var(--ivory);
+      background: transparent;
+      cursor: pointer;
+      transition: .35s
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--ink)
+    }
+
+    .btn.fill {
+      background: var(--gold);
+      color: var(--ink)
+    }
+
+    .btn.fill:hover {
+      background: transparent;
+      color: var(--gold)
+    }
+
+    .btn.dk {
+      color: var(--ink);
+      border-color: var(--gold-d)
+    }
+
+    .btn.dk:hover {
+      background: var(--ink);
+      color: var(--ivory);
+      border-color: var(--ink)
+    }
+
+    /* hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--ivory);
+      position: relative;
+      overflow: hidden;
+      padding: 140px 0 120px;
+      background: radial-gradient(ellipse at 50% 115%, rgba(29, 106, 138, .75) 0%, rgba(29, 106, 138, 0) 62%), linear-gradient(180deg, #0a2342 0%, #0d2b52 100%)
+    }
+
+    .hero .bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(10, 35, 66, .66), rgba(10, 35, 66, .84)), url(img/hero.jpg) 18% center/cover no-repeat
+    }
+
+    .hero .lines {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(90deg, transparent 0 119px, rgba(201, 164, 92, .07) 119px 120px);
+      pointer-events: none
+    }
+
+    .hero .fishline {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(900px, 120vw);
+      transform: translate(-50%, -50%);
+      opacity: .07
+    }
+
+    .hero .wrap {
+      position: relative;
+      z-index: 2
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 9vw, 7.2rem);
+      font-weight: 300;
+      letter-spacing: .01em;
+      margin: 26px 0 8px
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold)
+    }
+
+    .hero p.sub {
+      max-width: 460px;
+      margin: 20px auto 44px;
+      color: rgba(245, 240, 230, .7);
+      font-size: .98rem
+    }
+
+    .scroll {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--gold);
+      font-size: .6rem;
+      letter-spacing: .4em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px
+    }
+
+    .scroll i {
+      display: block;
+      width: 1px;
+      height: 46px;
+      background: linear-gradient(var(--gold), transparent);
+      animation: drop 2.4s ease-in-out infinite
+    }
+
+    @keyframes drop {
+      0% {
+        transform: scaleY(0);
+        transform-origin: top
+      }
+
+      50% {
+        transform: scaleY(1);
+        transform-origin: top
+      }
+
+      51% {
+        transform-origin: bottom
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: bottom
+      }
+    }
+
+    /* image placeholder: data-img ile gerçek foto verin */
+    .ph {
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background: var(--ink-2)
+    }
+
+    .ph svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%
+    }
+
+    .ph .tag {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      font-size: .58rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 230, .55)
+    }
+
+    .ph::after {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(201, 164, 92, .28);
+      pointer-events: none
+    }
+
+    .ph.has-img svg,
+    .ph.has-img .tag {
+      display: none
+    }
+
+    /* philosophy */
+    .phil p.big {
+      font: 300 clamp(1.6rem, 3.4vw, 2.5rem)/1.45 'Cormorant Garamond', serif;
+      max-width: 780px;
+      margin: 0 auto;
+      color: #262a30
+    }
+
+    .phil p.big em {
+      color: var(--gold-d)
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      margin-top: 90px
+    }
+
+    .cols .ph {
+      aspect-ratio: 4/5
+    }
+
+    .cols p {
+      color: var(--muted);
+      margin-top: 18px;
+      max-width: 440px
+    }
+
+    /* signature */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+      margin-top: 70px
+    }
+
+    .card .ph {
+      aspect-ratio: 1/1
+    }
+
+    .card .n {
+      font: 300 .8rem Inter;
+      letter-spacing: .3em;
+      color: var(--gold);
+      margin: 22px 0 8px
+    }
+
+    .card h3 {
+      font-size: 1.7rem;
+      font-weight: 400
+    }
+
+    .card p {
+      font-size: .84rem;
+      color: rgba(245, 240, 230, .55);
+      margin: 6px 0 10px
+    }
+
+    .card .price {
+      font: 400 1.3rem 'Cormorant Garamond', serif;
+      color: var(--gold)
+    }
+
+    /* menu */
+    .menu {
+      background: var(--paper)
+    }
+
+    .tabs {
+      display: flex;
+      gap: 34px;
+      overflow-x: auto;
+      justify-content: center;
+      padding: 6px 4px 14px;
+      margin-top: 46px;
+      border-bottom: 1px solid rgba(26, 29, 34, .12);
+      scrollbar-width: none
+    }
+
+    .tabs::-webkit-scrollbar {
+      display: none
+    }
+
+    .tab {
+      flex: none;
+      background: none;
+      border: 0;
+      border-bottom: 1px solid transparent;
+      margin-bottom: -15px;
+      padding: 0 0 14px;
+      font: 400 .68rem Inter;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      transition: .25s
+    }
+
+    .tab:hover {
+      color: var(--text)
+    }
+
+    .tab.on {
+      color: var(--text);
+      border-bottom-color: var(--gold-d)
+    }
+
+    .card-menu {
+      max-width: 1040px;
+      margin: 44px auto 0;
+      background: #fffdf8;
+      padding: 12px;
+      box-shadow: 0 30px 60px -34px rgba(0, 0, 0, .35)
+    }
+
+    .card-menu .inner {
+      border: 1px solid var(--gold);
+      padding: 46px 56px
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0
+    }
+
+    .item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(26, 29, 34, .08)
+    }
+
+    .item:last-child {
+      border-bottom: 0
+    }
+
+    .item .row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px
+    }
+
+    .item h4 {
+      font: 400 1.45rem 'Cormorant Garamond', serif
+    }
+
+    .item .dots {
+      flex: 1;
+      border-bottom: 1px dotted rgba(26, 29, 34, .3);
+      transform: translateY(-5px)
+    }
+
+    .item .p {
+      font: 500 1.35rem 'Cormorant Garamond', serif;
+      color: var(--gold-d);
+      white-space: nowrap
+    }
+
+    .item small {
+      display: block;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      color: var(--muted);
+      margin-top: 2px;
+      max-width: 82%
+    }
+
+    .note {
+      font-size: .76rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 34px;
+      letter-spacing: .04em
+    }
+
+    /* gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 150px;
+      gap: 16px;
+      margin-top: 70px
+    }
+
+    .gallery .ph:nth-child(1) {
+      grid-column: span 5;
+      grid-row: span 3
+    }
+
+    .gallery .ph:nth-child(2) {
+      grid-column: span 4;
+      grid-row: span 2
+    }
+
+    .gallery .ph:nth-child(3) {
+      grid-column: span 3;
+      grid-row: span 2
+    }
+
+    .gallery .ph:nth-child(4) {
+      grid-column: span 3;
+      grid-row: span 1
+    }
+
+    .gallery .ph:nth-child(5) {
+      grid-column: span 4;
+      grid-row: span 1
+    }
+
+    .gallery .ph:nth-child(6) {
+      grid-column: span 12;
+      grid-row: span 2
+    }
+
+    /* visit */
+    .visit .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      margin-top: 70px;
+      align-items: stretch
+    }
+
+    .info {
+      display: grid;
+      gap: 34px;
+      align-content: center
+    }
+
+    .info h3 {
+      font: 400 .66rem Inter;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      margin-bottom: 8px
+    }
+
+    .info p {
+      font: 300 1.35rem/1.45 'Cormorant Garamond', serif
+    }
+
+    .info a:hover {
+      color: var(--gold-d)
+    }
+
+    .map {
+      background: var(--ink);
+      min-height: 420px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--ivory);
+      padding: 30px
+    }
+
+    .map::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(201, 164, 92, .3);
+      pointer-events: none
+    }
+
+    .map svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .4
+    }
+
+    .map .inner {
+      position: relative
+    }
+
+    .pin {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin: 0 auto 22px;
+      box-shadow: 0 0 0 8px rgba(201, 164, 92, .18), 0 0 0 18px rgba(201, 164, 92, .08)
+    }
+
+    .map h3 {
+      font-size: 2rem;
+      font-weight: 300
+    }
+
+    .map p {
+      color: var(--gold);
+      font-size: .64rem;
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      margin: 12px 0 28px
+    }
+
+    footer {
+      background: var(--ink);
+      color: rgba(245, 240, 230, .6);
+      padding: 60px 0 44px;
+      text-align: center;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    footer .brand {
+      text-align: center;
+      margin-bottom: 22px
+    }
+
+    footer .brand b {
+      font-size: 1.5rem
+    }
+
+    footer .sep {
+      width: 56px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 22px;
+      opacity: .6
+    }
+
+    .wa {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 60;
+      background: var(--ink);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 13px 22px;
+      font: 400 .64rem Inter;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      transition: .3s
+    }
+
+    .wa:hover {
+      background: var(--gold);
+      color: var(--ink)
+    }
+
+    .rv {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 1s ease, transform 1s ease
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none
+    }
+
+    @media(max-width:900px) {
+      section {
+        padding: 84px 0
+      }
+
+      .links {
+        position: fixed;
+        inset: 68px 0 auto 0;
+        background: var(--ink);
+        flex-direction: column;
+        padding: 34px;
+        gap: 26px;
+        display: none;
+        border-bottom: 1px solid var(--line)
+      }
+
+      .links.open {
+        display: flex
+      }
+
+      .burger {
+        display: block
+      }
+
+      nav .wrap {
+        height: 70px
+      }
+
+      .cols,
+      .visit .grid {
+        grid-template-columns: 1fr;
+        gap: 44px
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px
+      }
+
+      .card-menu .inner {
+        padding: 26px 22px
+      }
+
+      .tabs {
+        justify-content: flex-start;
+        gap: 26px
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 150px;
+        gap: 12px
+      }
+
+      .gallery .ph:nth-child(n) {
+        grid-column: span 1;
+        grid-row: span 1
+      }
+
+      .gallery .ph:nth-child(1),
+      .gallery .ph:nth-child(6) {
+        grid-column: span 2;
+        grid-row: span 2
+      }
+
+      .item small {
+        max-width: 100%
+      }
+    }
+
+    @media(max-width:520px) {
+      .cards {
+        grid-template-columns: 1fr
+      }
+
+      .hero {
+        padding-top: 120px
+      }
+    }
+
+    /* ---- eski renk paleti + uyum düzeltmeleri ---- */
+    .eyebrow {
+      color: var(--coral)
+    }
+
+    .dark .eyebrow,
+    .hero .eyebrow,
+    .map p {
+      color: var(--gold)
+    }
+
+    h2 em,
+    .phil p.big em {
+      color: var(--sea)
+    }
+
+    .dark h2 em {
+      color: var(--gold)
+    }
+
+    .item .p {
+      color: var(--coral)
+    }
+
+    .card .n {
+      color: var(--gold)
+    }
+
+    .visit {
+      background: var(--foam)
+    }
+
+    .info h3 {
+      color: var(--sea)
+    }
+
+    .tab.on {
+      border-bottom-color: var(--coral)
+    }
+
+    .tabs {
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: visible;
+      gap: 6px 30px;
+      border-bottom: 1px solid rgba(20, 35, 58, .14);
+      padding: 0 0 10px
+    }
+
+    .tab {
+      margin-bottom: 0;
+      padding: 8px 0
+    }
+
+    .items {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 64px
+    }
+
+    .item:nth-last-child(2):nth-child(odd) {
+      border-bottom: 0
+    }
+
+    @media(max-width:1000px) {
+      .items {
+        grid-template-columns: 1fr
+      }
+
+      .tabs {
+        gap: 4px 22px
+      }
+    }
+
+    @media(max-width:560px) {
+      .tabs {
+        gap: 2px 16px;
+        justify-content: flex-start
+      }
+
+      .tab {
+        font-size: .62rem;
+        letter-spacing: .16em;
+        padding: 7px 0
+      }
+
+      .card-menu {
+        padding: 8px
+      }
+
+      .card-menu .inner {
+        padding: 14px 16px
+      }
+
+      .item h4 {
+        font-size: 1.25rem
+      }
+
+      .item .p {
+        font-size: 1.2rem
+      }
+
+      .wrap {
+        padding: 0 20px
+      }
+
+      h2 {
+        font-size: 2.1rem
+      }
+
+      .wa {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        border-width: 1px 0 0;
+        padding: 15px
+      }
+
+      footer {
+        padding-bottom: 90px
+      }
+
+      .hero h1 {
+        font-size: 3.1rem
+      }
+    }
+
+    /* ---- fotoğraflar ---- */
+    .band {
+      background: var(--navy);
+      color: var(--ivory);
+      text-align: center;
+      padding: 64px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .band h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      color: var(--ivory)
+    }
+
+    .band h2 em {
+      color: var(--gold)
+    }
+
+    .band p.s {
+      max-width: 520px;
+      margin: 6px auto 0;
+      color: rgba(247, 242, 233, .75)
+    }
+
+    .item.has-th {
+      display: flex;
+      gap: 20px;
+      align-items: center
+    }
+
+    .item .main {
+      flex: 1;
+      min-width: 0
+    }
+
+    .th {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
+      flex: none;
+      border: 1px solid var(--gold);
+      padding: 3px;
+      background: #fffdf8
+    }
+
+    .ph.has-img {
+      transition: .5s
+    }
+
+    .gallery .ph.has-img {
+      filter: saturate(1.02)
+    }
+
+    footer .brand {
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    footer .brand .coinw {
+      width: 78px;
+      height: 78px
+    }
+
+    @media(max-width:560px) {
+      .th {
+        width: 62px;
+        height: 62px
+      }
+
+      .item.has-th {
+        gap: 14px
+      }
+
+      .brand .coinw {
+        width: 40px;
+        height: 40px
+      }
+
+      .brand b {
+        font-size: 1.1rem
+      }
+    }
+
+    /* ---- misafirlerimiz ---- */
+    .guests {
+      background: var(--ivory)
+    }
+
+    .masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 60px
+    }
+
+    .masonry figure {
+      aspect-ratio: 5/4;
+      margin: 0;
+      padding: 9px;
+      background: #fffdf8;
+      border: 1px solid rgba(201, 164, 92, .55);
+      box-shadow: 0 22px 40px -28px rgba(10, 35, 66, .5)
+    }
+
+    .masonry img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
+      transition: .4s
+    }
+
+    .masonry figure:hover img {
+      filter: brightness(1.05)
+    }
+
+    .lb {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 18, 36, .94);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      cursor: zoom-out
+    }
+
+    .lb.open {
+      display: flex
+    }
+
+    .lb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border: 1px solid var(--gold);
+      padding: 6px;
+      background: #fffdf8
+    }
+
+    .lbx {
+      position: absolute;
+      top: 14px;
+      right: 22px;
+      background: none;
+      border: 0;
+      color: var(--ivory);
+      font-size: 2.4rem;
+      line-height: 1;
+      cursor: pointer
+    }
+
+    @media(max-width:1100px) {
+      .links {
+        gap: 22px
+      }
+
+      .links a {
+        letter-spacing: .2em
+      }
+    }
+
+    @media(max-width:900px) {
+      .masonry {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px
+      }
+
+      .masonry figure {
+        padding: 6px
+      }
+    }
+
+    /* ---- v7: sekmeler, büyütme, ikon, yorumlar ---- */
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      overflow: visible;
+      border-bottom: 1px solid rgba(20, 35, 58, .14);
+      padding: 0 0 12px
+    }
+
+    .tabrow {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2px 30px
+    }
+
+    .th {
+      cursor: zoom-in;
+      transition: transform .28s ease, box-shadow .28s ease;
+      position: relative;
+      z-index: 1;
+      transform-origin: left center
+    }
+
+    @media(hover:hover) {
+      .th:hover {
+        transform: scale(2.4);
+        z-index: 8;
+        box-shadow: 0 22px 44px -10px rgba(10, 35, 66, .55)
+      }
+    }
+
+    .th:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px
+    }
+
+    .lb {
+      flex-direction: column;
+      gap: 14px
+    }
+
+    .lb img {
+      max-height: calc(100% - 52px)
+    }
+
+    .lbc {
+      color: var(--ivory);
+      font: 400 1.6rem 'Cormorant Garamond', serif;
+      letter-spacing: .04em;
+      min-height: 1em
+    }
+
+    .ig {
+      display: inline-flex;
+      align-items: center;
+      gap: .5em
+    }
+
+    .ig:hover {
+      color: var(--gold-d)
+    }
+
+    footer .ig:hover {
+      color: var(--gold)
+    }
+
+    .rgrid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 60px
+    }
+
+    .rcard {
+      flex: 0 1 calc(33.333% - 15px);
+      min-width: 260px;
+      margin: 0;
+      padding: 34px 30px 28px;
+      background: var(--ink-2);
+      border: 1px solid var(--line);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center
+    }
+
+    .rcard .stars {
+      display: flex;
+      gap: 4px;
+      color: var(--gold);
+      margin-bottom: 18px
+    }
+
+    .rcard .stars svg {
+      width: 18px;
+      height: 18px
+    }
+
+    .rcard blockquote {
+      font: italic 400 1.45rem/1.4 'Cormorant Garamond', serif;
+      color: var(--ivory);
+      flex: 1
+    }
+
+    .rcard figcaption {
+      margin-top: 20px;
+      font: 400 .62rem Inter;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    @media(max-width:700px) {
+      .rcard {
+        flex: 1 1 100%
+      }
+    }
+
+    @media(max-width:560px) {
+      .tabrow {
+        gap: 2px 16px
+      }
+    }
+
+    .rsum {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px
+    }
+
+    .rsum .big {
+      font: 300 3.4rem/1 'Cormorant Garamond', serif;
+      color: var(--gold)
+    }
+
+    .rsum .stars {
+      display: flex;
+      gap: 3px;
+      color: var(--gold)
+    }
+
+    .rsum .stars svg {
+      width: 17px;
+      height: 17px
+    }
+
+    .rsum .sub {
+      font: 400 .68rem Inter;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(247, 242, 233, .78)
+    }
+
+    /* ---- v8: okunabilirlik ---- */
+    section {
+      scroll-margin-top: 68px
+    }
+
+    .eyebrow {
+      font-size: .82rem;
+      letter-spacing: .28em
+    }
+
+    .links a {
+      font-size: .82rem;
+      letter-spacing: .18em;
+      color: rgba(247, 242, 233, .94)
+    }
+
+    .lang {
+      font-size: .78rem
+    }
+
+    .brand span {
+      font-size: .66rem;
+      letter-spacing: .32em
+    }
+
+    .btn {
+      font-size: .84rem;
+      letter-spacing: .22em
+    }
+
+    .tab {
+      font-size: .82rem;
+      letter-spacing: .18em;
+      color: #46526a
+    }
+
+    .tab.on {
+      color: var(--text)
+    }
+
+    .card .n {
+      font-size: .9rem
+    }
+
+    .card p {
+      font-size: .98rem;
+      color: rgba(247, 242, 233, .82)
+    }
+
+    .info h3 {
+      font-size: .78rem
+    }
+
+    .rcard figcaption {
+      font-size: .74rem
+    }
+
+    .ph .tag {
+      font-size: .7rem
+    }
+
+    .scroll {
+      font-size: .72rem
+    }
+
+    .lbc {
+      font-size: 1.8rem
+    }
+
+    footer {
+      font-size: .84rem
+    }
+
+    .wa {
+      font-size: .8rem
+    }
+
+    .note {
+      font-size: .9rem;
+      color: #4f5a6e
+    }
+
+    .item small {
+      font-size: 1.12rem
+    }
+
+    .lead {
+      font-size: 1.06rem
+    }
+
+    .hero p.sub {
+      font-size: 1.06rem;
+      color: rgba(247, 242, 233, .85)
+    }
+
+    @media(max-width:560px) {
+      .tab {
+        font-size: .72rem;
+        letter-spacing: .1em
+      }
+
+      .tabrow {
+        gap: 2px 14px
+      }
+
+      .eyebrow {
+        font-size: .78rem
+      }
+
+      .brand span {
+        font-size: .6rem
+      }
+    }
+
+    /* ---- Wi-Fi düğmesi / pencere ---- */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 1px solid var(--gold-d);
+      color: var(--text);
+      padding: 11px 22px;
+      border-radius: 99px;
+      font: 500 .8rem Inter;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .25s
+    }
+
+    .chip:hover {
+      background: var(--navy);
+      color: var(--ivory);
+      border-color: var(--navy)
+    }
+
+    .chip svg {
+      width: 20px;
+      height: 20px
+    }
+
+    .md {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 18, 36, .88);
+      z-index: 110;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px
+    }
+
+    .md.open {
+      display: flex
+    }
+
+    .mc {
+      position: relative;
+      background: var(--ivory);
+      border: 1px solid var(--gold);
+      padding: 44px 40px 36px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center
+    }
+
+    .mc .lbx {
+      color: var(--text);
+      top: 6px;
+      right: 12px
+    }
+
+    .mc h3 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 18px;
+      color: var(--navy)
+    }
+
+    .wr {
+      margin-bottom: 18px
+    }
+
+    .wr small {
+      display: block;
+      font: 400 .74rem Inter;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--sea);
+      margin-bottom: 4px
+    }
+
+    .wr b {
+      font: 500 1.7rem 'Cormorant Garamond', serif;
+      word-break: break-all
+    }
+
+    .wn {
+      font: italic 400 1.35rem/1.4 'Cormorant Garamond', serif;
+      color: var(--text)
+    }
+
+    /* ---- mobil eylem çubuğu + hero fotoğrafı ---- */
+    .abar,
+    .hero-photo {
+      display: none
+    }
+
+    @media(max-width:900px) {
+      .abar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 60;
+        background: rgba(10, 35, 66, .97);
+        border-top: 1px solid var(--line);
+        padding: 4px 2px calc(4px + env(safe-area-inset-bottom))
+      }
+
+      .abar a,
+      .abar button {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        color: var(--ivory);
+        background: none;
+        border: 0;
+        padding: 8px 2px;
+        font: 500 .72rem Inter;
+        letter-spacing: .02em;
+        cursor: pointer
+      }
+
+      .abar svg {
+        width: 23px;
+        height: 23px;
+        color: var(--gold)
+      }
+
+      .abar a:active,
+      .abar button:active {
+        background: rgba(255, 255, 255, .08)
+      }
+
+      .wa {
+        display: none
+      }
+
+      footer {
+        padding-bottom: 110px
+      }
+
+      .hero {
+        flex-direction: column;
+        justify-content: center;
+        gap: 38px;
+        padding: 108px 0 60px
+      }
+
+      .hero .wrap {
+        width: 100%
+      }
+
+      .hero .bg {
+        background: linear-gradient(rgba(10, 35, 66, .55), rgba(10, 35, 66, .92))
+      }
+
+      .hero-photo {
+        display: block;
+        position: relative;
+        z-index: 2;
+        width: calc(100% - 40px);
+        max-width: 600px;
+        aspect-ratio: 16/10;
+        background: url(img/hero_photo.jpg) center/cover no-repeat;
+        border: 1px solid var(--gold);
+        box-shadow: 0 24px 50px -20px rgba(0, 0, 0, .6)
+      }
+
+      .hero-photo::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border: 1px solid rgba(201, 164, 92, .35)
+      }
+
+      .scroll {
+        display: none
+      }
+    }
+
+    /* ---- v9: mobil hero tam ekran ---- */
+    @media(max-width:900px) {
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 100svh;
+        padding: 0 0 96px;
+        gap: 0
+      }
+
+      .hero .bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: auto;
+        height: 70%;
+        background: linear-gradient(180deg, rgba(10, 35, 66, .45) 0, rgba(10, 35, 66, .05) 22%, rgba(10, 35, 66, .6) 100%), url(img/hero.jpg) 0 center/cover no-repeat;
+        -webkit-mask-image: linear-gradient(#000 62%, transparent);
+        mask-image: linear-gradient(#000 62%, transparent)
+      }
+
+      .hero-photo {
+        display: none
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 13vw, 4.6rem)
+      }
+
+      .hero .wrap {
+        padding-bottom: 0
+      }
+
+      .scroll {
+        display: none
+      }
+    }
+
+    /* ---- dönen madeni para logo ---- */
+    .coinw {
+      display: block;
+      width: 46px;
+      height: 46px;
+      flex: none;
+      perspective: 500px
+    }
+
+    .coin {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: coinspin 10s linear infinite
+    }
+
+    .brand .coin img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      box-shadow: 0 0 0 1px rgba(201, 164, 92, .55)
+    }
+
+    .brand .coin img.bk {
+      transform: rotateY(180deg)
+    }
+
+    @keyframes coinspin {
+      to {
+        transform: rotateY(360deg)
+      }
+    }
+
+    /* ---- v10: mobilde öne çıkan kartlar net ayrışsın ---- */
+    @media(max-width:520px) {
+      .cards {
+        gap: 30px
+      }
+
+      .card {
+        border: 1px solid rgba(201, 164, 92, .4);
+        background: rgba(255, 255, 255, .04);
+        padding-bottom: 24px
+      }
+
+      .card .ph {
+        aspect-ratio: 4/3
+      }
+
+      .card h3 {
+        margin-top: 20px
+      }
+
+      .card h3,
+      .card p,
+      .card .price {
+        margin-left: 22px;
+        margin-right: 22px
+      }
+
+      .card .price {
+        display: block;
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(201, 164, 92, .3);
+        font-size: 1.5rem
+      }
+    }
+
+    /* ---- v11: yer tutucu simgeler + büyük başlık çubuğu ---- */
+    .th-ph {
+      width: 84px;
+      height: 84px;
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(201, 164, 92, .45);
+      background: linear-gradient(160deg, #12305a, #0a2342);
+      color: var(--gold)
+    }
+
+    .th-ph svg {
+      width: 46%;
+      height: 46%
+    }
+
+    @media(max-width:560px) {
+      .th-ph {
+        width: 62px;
+        height: 62px
+      }
+    }
+
+    @media(min-width:1201px) {
+      nav .wrap {
+        height: 108px;
+        width: min(1500px, 94vw);
+        max-width: none
+      }
+
+      nav.solid .wrap {
+        height: 80px
+      }
+
+      .brand .coinw {
+        width: 60px;
+        height: 60px
+      }
+
+      .brand b {
+        font-size: 1.75rem
+      }
+
+      .brand span {
+        font-size: .7rem
+      }
+
+      .links {
+        gap: 38px
+      }
+
+      .links a {
+        font-size: .92rem
+      }
+
+      .lang {
+        font-size: .88rem;
+        padding: 8px 16px
+      }
+    }
+
+    @media(min-width:1201px) and (max-width:1380px) {
+      .links {
+        gap: 24px
+      }
+
+      .links a {
+        font-size: .84rem;
+        letter-spacing: .14em
+      }
+
+      .brand b {
+        font-size: 1.5rem
+      }
+
+      .brand span {
+        font-size: .62rem
+      }
+    }
+
+    @media(min-width:901px) and (max-width:1200px) {
+      .links {
+        gap: 16px
+      }
+
+      .links a {
+        font-size: .74rem;
+        letter-spacing: .1em
+      }
+
+      .brand b {
+        font-size: 1.15rem;
+        letter-spacing: .14em
+      }
+
+      .brand span {
+        font-size: .5rem;
+        letter-spacing: .3em
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="fishline" viewBox="0 0 200 100">
-      <path d="M8 50C40 6 112 2 150 38l42-28v80l-42-28C112 98 40 94 8 50z" fill="none" stroke="currentColor" stroke-width="1"/>
-      <path d="M150 38c-8 8-8 16 0 24M60 22c6 12 6 44 0 56M82 18c6 14 6 50 0 64M104 20c5 12 5 48 0 60" fill="none" stroke="currentColor" stroke-width=".6"/>
-      <circle cx="40" cy="44" r="2.4" fill="none" stroke="currentColor" stroke-width=".8"/>
-    </symbol>
-  </defs>
-</svg>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="fishline" viewBox="0 0 200 100">
+        <path d="M8 50C40 6 112 2 150 38l42-28v80l-42-28C112 98 40 94 8 50z" fill="none" stroke="currentColor"
+          stroke-width="1" />
+        <path d="M150 38c-8 8-8 16 0 24M60 22c6 12 6 44 0 56M82 18c6 14 6 50 0 64M104 20c5 12 5 48 0 60" fill="none"
+          stroke="currentColor" stroke-width=".6" />
+        <circle cx="40" cy="44" r="2.4" fill="none" stroke="currentColor" stroke-width=".8" />
+      </symbol>
+    </defs>
+  </svg>
 
-<nav id="nav">
-  <div class="wrap">
-    <a href="#top" class="brand"><span class="coinw"><span class="coin"><img src="img/logo.png" alt="Öz Balık Restaurant logosu"><img class="bk" src="img/logo.png" alt="" aria-hidden="true"></span></span><div><b>Suat'ın Yeri</b><span>Öz Balık Restaurant</span></div></a>
-    <div class="links" id="links">
-      <a href="#felsefe" data-i="n_about">Hakkımızda</a>
-      <a href="#one-cikanlar" data-i="n_sig">Lezzetler</a>
-      <a href="#menu" data-i="n_menu">Menü</a>
-      <a href="#galeri" data-i="n_gal">Galeri</a>
-      <a href="#misafirler" data-i="n_guest">Misafirlerimiz</a>
-      <a href="#ulasim" data-i="n_visit">Ulaşım</a>
-      <button class="lang" id="lang">EN</button>
-    </div>
-    <button class="burger" id="burger" aria-label="Menü">☰</button>
-  </div>
-</nav>
-
-<header class="hero" id="top">
-  <div class="bg" data-img=""></div>
-  <div class="lines"></div>
-  <svg class="fishline" viewBox="0 0 200 100" style="color:#c9a45c"><use href="#fishline"/></svg>
-  <div class="wrap">
-    <p class="eyebrow" data-i="h_eye">Atakum · Samsun</p>
-    <h1><span data-i="h_t1">Denizden</span><br><em data-i="h_t2">sofraya</em></h1>
-    <div class="rule"></div>
-    <p class="sub" data-i="h_p">Günün taze balığı, özenle hazırlanan mezeler ve denizin en yalın lezzetleri.</p>
-    <a class="btn" href="https://wa.me/905412005553" data-i="h_res">Rezervasyon</a>
-  </div>
-  <div class="hero-photo" role="img" aria-label="Suat'ın Yeri Öz Balık Restaurant dış cephe"></div>
-  <div class="scroll"><span data-i="h_scroll">Keşfet</span><i></i></div>
-</header>
-
-<section class="band">
-  <div class="wrap">
-    <p class="eyebrow rv" data-i="b_eye">Aile dostu</p>
-    <div class="rule"></div>
-    <h2 class="rv" data-i="b_t">Restoranımız <em>alkolsüzdür</em></h2>
-    <p class="s rv" data-i="b_p">Ailece güvenle tercih edebileceğiniz, huzurlu bir sofra anlayışı.</p>
-  </div>
-</section>
-
-<section class="phil" id="felsefe">
-  <div class="wrap center">
-    <p class="eyebrow rv" data-i="a_eye">Hakkımızda</p>
-    <div class="rule"></div>
-    <p class="big rv" data-i="a_t">Ne fazla, ne eksik. Taze bir balık, <em>doğru ateş</em> ve bir dilim limon.</p>
-    <div class="cols">
-      <div class="rv"><div class="ph" data-img="" data-label="about"></div></div>
-      <div class="rv" style="text-align:left">
-        <p class="eyebrow" data-i="a_eye2">Anlayışımız</p>
-        <h2 data-i="a_h">Sadelikte <em>incelik</em></h2>
-        <p data-i="a_p">Atakum'un kalbinde, her gün gelen balıkları ızgarada ya da tavada; roka, soğan ve limonla servis ediyoruz. Çorbadan tatlıya tüm menümüz aile sıcaklığıyla hazırlanır.</p>
+  <nav id="nav">
+    <div class="wrap">
+      <a href="#top" class="brand"><span class="coinw"><span class="coin"><img src="img/logo.png"
+              alt="Öz Balık Restaurant logosu"><img class="bk" src="img/logo.png" alt=""
+              aria-hidden="true"></span></span>
+        <div><b>Suat'ın Yeri</b><span>Öz Balık Restaurant</span></div>
+      </a>
+      <div class="links" id="links">
+        <a href="#felsefe" data-i="n_about">Hakkımızda</a>
+        <a href="#one-cikanlar" data-i="n_sig">Lezzetler</a>
+        <a href="#menu" data-i="n_menu">Menü</a>
+        <a href="#galeri" data-i="n_gal">Galeri</a>
+        <a href="#misafirler" data-i="n_guest">Misafirlerimiz</a>
+        <a href="#ulasim" data-i="n_visit">Ulaşım</a>
+        <button class="lang" id="lang">EN</button>
       </div>
+      <button class="burger" id="burger" aria-label="Menü">☰</button>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="dark" id="one-cikanlar">
-  <div class="wrap">
-    <div class="center">
-      <p class="eyebrow" data-i="s_eye">Öne çıkanlar</p>
+  <header class="hero" id="top">
+    <div class="bg" data-img=""></div>
+    <div class="lines"></div>
+    <svg class="fishline" viewBox="0 0 200 100" style="color:#c9a45c">
+      <use href="#fishline" />
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow" data-i="h_eye">Atakum · Samsun</p>
+      <h1><span data-i="h_t1">Denizden</span><br><em data-i="h_t2">sofraya</em></h1>
       <div class="rule"></div>
-      <h2 data-i="s_t">Seçkin <em>lezzetler</em></h2>
+      <p class="sub" data-i="h_p">Günün taze balığı, özenle hazırlanan mezeler ve denizin en yalın lezzetleri.</p>
+      <a class="btn" href="https://wa.me/905412005553" data-i="h_res">Rezervasyon</a>
     </div>
-    <div class="cards" id="cards"></div>
-  </div>
-</section>
+    <div class="hero-photo" role="img" aria-label="Suat'ın Yeri Öz Balık Restaurant dış cephe"></div>
+    <div class="scroll"><span data-i="h_scroll">Keşfet</span><i></i></div>
+  </header>
 
-<section class="menu" id="menu">
-  <div class="wrap">
-    <div class="center">
-      <p class="eyebrow" data-i="m_eye">Menü</p>
+  <section class="band">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i="b_eye">Aile dostu</p>
       <div class="rule"></div>
-      <h2 data-i="m_t">Lezzet <em>listemiz</em></h2>
-      <p style="margin-top:22px"><button class="chip" data-wifi><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.2a14.5 14.5 0 0 1 19 0M5.6 12.7a10 10 0 0 1 12.8 0M8.8 16.1a5.3 5.3 0 0 1 6.4 0"/><circle cx="12" cy="19.4" r="1" fill="currentColor"/></svg><span data-i="m_wifi">Wi-Fi Şifresi</span></button></p>
+      <h2 class="rv" data-i="b_t">Restoranımız <em>alkolsüzdür</em></h2>
+      <p class="s rv" data-i="b_p">Ailece güvenle tercih edebileceğiniz, huzurlu bir sofra anlayışı.</p>
     </div>
-    <div class="tabs" id="tabs"></div>
-    <div class="card-menu"><div class="inner"><div class="items" id="items"></div></div></div>
-    <p class="note" data-i="m_note">Fiyatlar güncel menüden alınmıştır, değişebilir. Alerjen bilgisi için lütfen garsonumuza danışın.</p>
-  </div>
-</section>
+  </section>
 
-<section class="dark" id="galeri">
-  <div class="wrap">
-    <div class="center">
-      <p class="eyebrow" data-i="g_eye">Galeri</p>
+  <section class="phil" id="felsefe">
+    <div class="wrap center">
+      <p class="eyebrow rv" data-i="a_eye">Hakkımızda</p>
       <div class="rule"></div>
-      <h2 data-i="g_t">Sofradan <em>kareler</em></h2>
-    </div>
-    <div class="gallery" id="gallery"></div>
-  </div>
-</section>
-
-<section class="guests" id="misafirler">
-  <div class="wrap">
-    <div class="center">
-      <p class="eyebrow" data-i="q_eye">Misafirlerimiz</p>
-      <div class="rule"></div>
-      <h2 data-i="q_t">Sofranın <em>konukları</em></h2>
-      <p class="lead" data-i="q_p" style="margin-left:auto;margin-right:auto">Bizi tercih eden, sofrayı bizimle paylaşan değerli misafirlerimiz.</p>
-    </div>
-    <div class="masonry" id="guestGrid"></div>
-  </div>
-</section>
-
-<section class="dark reviews" id="yorumlar">
-  <div class="wrap">
-    <div class="center">
-      <p class="eyebrow" data-i="r_eye">Yorumlar</p>
-      <div class="rule"></div>
-      <h2 data-i="r_t">Misafirlerimiz <em>ne diyor?</em></h2>
-    </div>
-    <div class="rgrid" id="reviewGrid"></div>
-    <div class="center" style="margin-top:46px"><a class="btn" href="https://www.google.com/maps/place/Suat%27%C4%B1n+Yeri+%C3%96z+Bal%C4%B1k+Restaurant/@41.3391724,36.2599499,15z/data=!4m6!3m5!1s0x408879f0082321b1:0xdf7d081e5aafd1f6!8m2!3d41.3391724!4d36.2599499!16s%2Fg%2F11r3ctv3zp" data-i="r_cta">Google’da Değerlendirin</a></div>
-  </div>
-</section>
-
-<div class="md" id="wifiModal" role="dialog" aria-label="Wi-Fi">
-  <div class="mc">
-    <button class="lbx" aria-label="Kapat">×</button>
-    <h3 data-i="w_t">Wi-Fi</h3>
-    <div id="wifiBody"></div>
-  </div>
-</div>
-
-<div class="abar" aria-label="Hızlı eylemler">
-  <a href="#menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14M5 12h14M5 19h9"/></svg><span data-i="ab_menu">Menü</span></a>
-  <button type="button" data-wifi><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 9.2a14.5 14.5 0 0 1 19 0M5.6 12.7a10 10 0 0 1 12.8 0M8.8 16.1a5.3 5.3 0 0 1 6.4 0"/><circle cx="12" cy="19.4" r="1" fill="currentColor"/></svg><span data-i="ab_wifi">Wi-Fi</span></button>
-  <a href="tel:+905412005553"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-i="ab_call">Ara</span></a>
-  <a href="https://goo.gl/maps/Tbhee81TEWsdTqAJ8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i="ab_dir">Yol Tarifi</span></a>
-  <a href="https://wa.me/905412005553"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4.2A8 8 0 1 1 8.3 18.7z"/><path d="M9 9.5c.3 2 2 3.8 4.2 4.5l1.3-1.2-1.6-1-.8.6c-.8-.4-1.5-1.1-1.8-1.9l.6-.8-1-1.6z"/></svg><span data-i="ab_wa">WhatsApp</span></a>
-</div>
-
-<div class="lb" id="lb" role="dialog" aria-label="Fotoğraf"><button class="lbx" aria-label="Kapat">×</button><img alt=""><div class="lbc" id="lbc"></div></div>
-
-<section class="visit" id="ulasim">
-  <div class="wrap">
-    <div class="center">
-      <p class="eyebrow" data-i="v_eye">Ulaşım</p>
-      <div class="rule"></div>
-      <h2 data-i="v_t">Sizi <em>bekliyoruz</em></h2>
-    </div>
-    <div class="grid">
-      <div class="info">
-        <div><h3 data-i="v_addr">Adres</h3><p>Cumhuriyet Mahallesi, Recep Tayyip Erdoğan Bulvarı No:20A, 55200 Atakum / Samsun</p></div>
-        <div><h3 data-i="v_phone">Telefon</h3><p><a href="tel:+905412005553">0 (541) 200 55 53</a><br><a href="tel:+903624355355">0 (362) 435 53 55</a></p></div>
-        <div><h3 data-i="v_hours">Çalışma saatleri</h3><p><!-- TODO: gerçek saatleri yaz --><span data-i="v_hours_v">Pazartesi: Kapalı<br>Salı – Pazar: 11:00 – 23:00</span></p></div>
-        <div><h3>Instagram</h3><p><a class="ig" href="https://www.instagram.com/suatinyeri" aria-label="Instagram: suatinyeri"><svg viewBox="0 0 24 24" width="1.15em" height="1.15em" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg><span>suatinyeri</span></a></p></div>
-      </div>
-      <div class="map">
-        <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#c9a45c" stroke-width=".8"><path d="M-10 110C80 80 140 150 220 120S340 60 420 100M-10 230C90 200 160 270 250 240S350 190 420 220M130 -10C120 100 160 180 140 430M290 -10C310 90 270 200 300 430"/></svg>
-        <div class="inner">
-          <div class="pin"></div>
-          <h3>Suat'ın Yeri</h3>
-          <p>Atakum · Samsun</p>
-          <a class="btn" href="https://goo.gl/maps/Tbhee81TEWsdTqAJ8" data-i="v_dir">Yol Tarifi</a>
+      <p class="big rv" data-i="a_t">Ne fazla, ne eksik. Taze bir balık, <em>doğru ateş</em> ve bir dilim limon.</p>
+      <div class="cols">
+        <div class="rv">
+          <div class="ph" data-img="" data-label="about"></div>
+        </div>
+        <div class="rv" style="text-align:left">
+          <p class="eyebrow" data-i="a_eye2">Anlayışımız</p>
+          <h2 data-i="a_h">Sadelikte <em>incelik</em></h2>
+          <p data-i="a_p">Atakum'un kalbinde, her gün gelen balıkları ızgarada ya da tavada; roka,soğan,mısır ekmeği ve
+            limonla servis ediyoruz. Çorbadan tatlıya tüm menümüz aile sıcaklığıyla hazırlanır.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="dark" id="one-cikanlar">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow" data-i="s_eye">Öne çıkanlar</p>
+        <div class="rule"></div>
+        <h2 data-i="s_t">Seçkin <em>lezzetler</em></h2>
+      </div>
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow" data-i="m_eye">Menü</p>
+        <div class="rule"></div>
+        <h2 data-i="m_t">Lezzet <em>listemiz</em></h2>
+        <p style="margin-top:22px"><button class="chip" data-wifi><svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M2.5 9.2a14.5 14.5 0 0 1 19 0M5.6 12.7a10 10 0 0 1 12.8 0M8.8 16.1a5.3 5.3 0 0 1 6.4 0" />
+              <circle cx="12" cy="19.4" r="1" fill="currentColor" />
+            </svg><span data-i="m_wifi">Wi-Fi Şifresi</span></button></p>
+      </div>
+      <div class="tabs" id="tabs"></div>
+      <div class="card-menu">
+        <div class="inner">
+          <div class="items" id="items"></div>
+        </div>
+      </div>
+      <p class="note" data-i="m_note">Fiyatlar güncel menüden alınmıştır, değişebilir. Alerjen bilgisi için lütfen
+        garsonumuza danışın.</p>
+    </div>
+  </section>
+
+  <section class="dark" id="galeri">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow" data-i="g_eye">Galeri</p>
+        <div class="rule"></div>
+        <h2 data-i="g_t">Sofradan <em>kareler</em></h2>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="guests" id="misafirler">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow" data-i="q_eye">Misafirlerimiz</p>
+        <div class="rule"></div>
+        <h2 data-i="q_t">Sofranın <em>konukları</em></h2>
+        <p class="lead" data-i="q_p" style="margin-left:auto;margin-right:auto">Bizi tercih eden, sofrayı bizimle
+          paylaşan değerli misafirlerimiz.</p>
+      </div>
+      <div class="masonry" id="guestGrid"></div>
+    </div>
+  </section>
+
+  <section class="dark reviews" id="yorumlar">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow" data-i="r_eye">Yorumlar</p>
+        <div class="rule"></div>
+        <h2 data-i="r_t">Misafirlerimiz <em>ne diyor?</em></h2>
+      </div>
+      <div class="rgrid" id="reviewGrid"></div>
+      <div class="center" style="margin-top:46px"><a class="btn"
+          href="https://www.google.com/maps/place/Suat%27%C4%B1n+Yeri+%C3%96z+Bal%C4%B1k+Restaurant/@41.3391724,36.2599499,15z/data=!4m6!3m5!1s0x408879f0082321b1:0xdf7d081e5aafd1f6!8m2!3d41.3391724!4d36.2599499!16s%2Fg%2F11r3ctv3zp"
+          data-i="r_cta">Google’da Değerlendirin</a></div>
+    </div>
+  </section>
+
+  <div class="md" id="wifiModal" role="dialog" aria-label="Wi-Fi">
+    <div class="mc">
+      <button class="lbx" aria-label="Kapat">×</button>
+      <h3 data-i="w_t">Wi-Fi</h3>
+      <div id="wifiBody"></div>
+    </div>
   </div>
-</section>
 
-<footer>
-  <div class="brand"><span class="coinw"><span class="coin"><img src="img/logo.png" alt="Öz Balık Restaurant logosu"><img class="bk" src="img/logo.png" alt="" aria-hidden="true"></span></span><div><b>Suat'ın Yeri</b><span>Öz Balık Restaurant</span></div></div>
-  <div class="sep"></div>
-  <div>© 2026 · Atakum, Samsun · <a class="ig" href="https://www.instagram.com/suatinyeri" aria-label="Instagram: suatinyeri"><svg viewBox="0 0 24 24" width="1.15em" height="1.15em" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg><span>suatinyeri</span></a></div>
-</footer>
+  <div class="abar" aria-label="Hızlı eylemler">
+    <a href="#menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 5h14M5 12h14M5 19h9" />
+      </svg><span data-i="ab_menu">Menü</span></a>
+    <button type="button" data-wifi><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M2.5 9.2a14.5 14.5 0 0 1 19 0M5.6 12.7a10 10 0 0 1 12.8 0M8.8 16.1a5.3 5.3 0 0 1 6.4 0" />
+        <circle cx="12" cy="19.4" r="1" fill="currentColor" />
+      </svg><span data-i="ab_wifi">Wi-Fi</span></button>
+    <a href="tel:+905412005553"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+      </svg><span data-i="ab_call">Ara</span></a>
+    <a href="https://goo.gl/maps/Tbhee81TEWsdTqAJ8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </svg><span data-i="ab_dir">Yol Tarifi</span></a>
+    <a href="https://wa.me/905412005553"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 20l1.4-4.2A8 8 0 1 1 8.3 18.7z" />
+        <path d="M9 9.5c.3 2 2 3.8 4.2 4.5l1.3-1.2-1.6-1-.8.6c-.8-.4-1.5-1.1-1.8-1.9l.6-.8-1-1.6z" />
+      </svg><span data-i="ab_wa">WhatsApp</span></a>
+  </div>
 
-<a class="wa" href="https://wa.me/905412005553" data-i="wa">Rezervasyon</a>
+  <div class="lb" id="lb" role="dialog" aria-label="Fotoğraf"><button class="lbx" aria-label="Kapat">×</button><img
+      alt="">
+    <div class="lbc" id="lbc"></div>
+  </div>
 
-<script>
-/* ---------- MENÜ VERİSİ (suatinyeri.com'dan alındı) ---------- */
-const MENU=[
- {id:'corba',tr:'Çorbalar',en:'Soups',items:[['Balık Çorbası (Az)','',180,'img/t_corba.jpg'],['Balık Çorbası (Tam)','',230,'img/t_corba.jpg'],['Mercimek Çorbası (Az)','',150],['Mercimek Çorbası (Tam)','',180]]},
- {id:'ara',tr:'Ara Sıcaklar',en:'Hot Starters',items:[['Kalamar','Tarator sosu ile',590],['Karides Tava','Bol tereyağı ve sarımsak ile',590],['Levrek Çıtlama','Tereyağı, sarımsak ve levrek ile',745,'img/t_levrek.jpg'],['Enginar Kalbi','',395],['Hamsili Pilav','',600,'img/t_hamsilipilav.jpg']]},
- {id:'meze',tr:'Mezeler',en:'Meze',items:[['Havuç Tarator','',100,'img/t_tarator.jpg'],['Cacık','',100]]},
- {id:'salata',tr:'Salatalar',en:'Salads',items:[['Izgara Tavuk Salata','',380],['Somon Salata','',420],['Ton Balıklı Salata','',350],['Roka Salatası','Marul, roka, domates ve beyaz peynir',210],['Yeşil Salata','Marul, roka, maydanoz ve yeşil soğan',180],['Mevsim Salatası','Marul, havuç ve soğan',180],['Çoban Salatası','Salatalık, domates ve soğan',180],['Piyaz','',340],['Duble Roka Salatası','',290],['Duble Mevsim Salatası','',260],['Duble Yeşil Salata','',260],['Duble Çoban Salatası','',260]]},
- {id:'ekmek',tr:'Ekmek Arası',en:'Sandwiches',items:[['Ekmek Arası Somon','Somon, marul ve soğan ile',340],['Ekmek Arası Uskumru','Eminönü usulü: uskumru, marul ve soğan',250,'img/t_uskumru.jpg'],['Ekmek Arası Köfte','',320],['Ekmek Arası Kalamar','Roka, domates, tarator sosu ile',350,'img/t_kalamar.jpg']]},
- {id:'izgara',tr:'Izgara Balıklar',en:'Grilled Fish',items:[['Hamsi','Roka, soğan söğüş, limon ile',485],['Barbun','Roka, soğan söğüş, limon ile',850],['Somon','Roka, soğan söğüş, limon ile',590],['Levrek','Roka, soğan söğüş, limon ile',690],['Çipura','Roka, soğan söğüş, limon ile',640],['Somon Şiş','',690],['Palamut','Roka, soğan söğüş, limon ile',450],['Sarıkanat','Roka, soğan söğüş, limon ile',900],['Lüfer','',560],['Uskumru','Roka, soğan söğüş, limon ile',640],['Sargan','Soğan söğüş, limon, turşu kavurması, mısır ekmeği ile',500],['İstavrit','',380],['Tirsi','Soğan söğüş, limon ile',360],['Çinekop','Roka, soğan söğüş, limon ile',840],['Kötek','Soğan söğüş, limon ile',460]]},
- {id:'tava',tr:'Tava Balıklar',en:'Pan-Fried Fish',items:[['Mezgit','Roka, soğan söğüş, limon ile',850],['Barbun','Roka, soğan söğüş, limon ile',850],['Somon','Roka, soğan söğüş, limon ile',590,'img/t_somon.jpg'],['Levrek','Roka, soğan söğüş, limon ile',690],['Çipura','Roka, soğan söğüş, limon ile',640],['Hamsi','Roka, soğan söğüş, limon ile',485],['Palamut','Roka, soğan söğüş, limon ile',450],['İstavrit','Roka, soğan söğüş, limon ile',380],['Sargan','Soğan söğüş, limon, turşu kavurması, mısır ekmeği ile',500],['Kalkan','Mevsim salatası, soğan söğüş, limon, turşu kavurması, mısır ekmeği ile',1000]]},
- {id:'et',tr:'Izgara Etler',en:'Grilled Meats',items:[['Izgara Köfte','Patates kızartması ve şehriyeli pilav ile',590,'img/t_kofte.jpg'],['Kalem Kuzu Pirzola','Közlenmiş domates ve biber ile',790,'img/t_kuzu.jpg'],['Tavuk Pirzola','Patates kızartması ve şehriyeli pilav ile',540,'img/t_tavuk.jpg']]},
- {id:'yan',tr:'Yan Ürünler',en:'Sides',items:[['Patates Kızartması','',150],['Pilav','',120],['Fırında Levrek Ekşili','Günlük taze sebzelerle kavrulup fırında levrekle birleşir (45 dk pişirme süresi)',650]]},
- {id:'tatli',tr:'Tatlılar',en:'Desserts',items:[['Kabak Tatlısı','Tahin ve ceviz ile',260,'img/t_tatli.jpg'],['Sıcak Helva','',260],['Helva','',140],['Ekmek Kadayıfı','Kaymak ile',220]]},
- {id:'soguk',tr:'Soğuk İçecekler',en:'Cold Drinks',items:[['Meyve Suyu','',80],['Şalgam','',80],['Küçük Su','',40],['Büyük Su','',60],['Sade Soda','',50],['Meyveli Soda','',60],['Ayran','',50]]},
- {id:'sicak',tr:'Sıcak İçecekler',en:'Hot Drinks',items:[['Türk Kahvesi','',80],['Çay','',30]]}
-];
-/* Öne çıkanlar: [ad, açıklama, fiyat] — görsel için ph() içindeki img parametresini doldurun */
-const SIG=[
- ['Somon Tava','Roka, soğan söğüş ve limon ile',590,'img/somon.jpg'],
- ['Ekmek Arası Uskumru','Eminönü usulü; marul ve soğanla',250,'img/uskumru.jpg'],
- ['Ekmek Arası Kalamar','Roka, domates ve tarator sosuyla',350,'img/kalamar.jpg'],
- ['Kabak Tatlısı','Tahin ve cevizle',260,'img/tatli.jpg']
-];
-const G=['img/g1.jpg','img/g2.jpg','img/g3.jpg','img/g4.jpg','img/g5.jpg','img/g6.jpg'];
-const T={
- tr:{n_about:'Hakkımızda',n_sig:'Lezzetler',n_menu:'Menü',n_gal:'Galeri',n_visit:'Ulaşım',n_guest:'Misafirlerimiz',h_eye:'Atakum · Samsun',h_t1:'Denizden',h_t2:'sofraya',h_p:'Günün taze balığı, özenle hazırlanan mezeler ve denizin en yalın lezzetleri.',h_res:'Rezervasyon',h_scroll:'Keşfet',wa:'Rezervasyon',a_eye:'Hakkımızda',a_t:'Ne fazla, ne eksik. Taze bir balık, <em>doğru ateş</em> ve bir dilim limon.',a_eye2:'Anlayışımız',a_h:'Sadelikte <em>incelik</em>',a_p:'Atakum\'un kalbinde, her gün gelen balıkları ızgarada ya da tavada; roka, soğan ve limonla servis ediyoruz. Çorbadan tatlıya tüm menümüz aile sıcaklığıyla hazırlanır.',s_eye:'Öne çıkanlar',s_t:'Seçkin <em>lezzetler</em>',m_eye:'Menü',m_t:'Lezzet <em>listemiz</em>',m_note:'Fiyatlar güncel menüden alınmıştır, değişebilir. Alerjen bilgisi için lütfen garsonumuza danışın.',g_eye:'Galeri',g_t:'Sofradan <em>kareler</em>',v_eye:'Ulaşım',v_t:'Sizi <em>bekliyoruz</em>',v_addr:'Adres',v_phone:'Telefon',v_hours:'Çalışma saatleri',v_hours_v:'Pazartesi: Kapalı<br>Salı – Pazar: 11:00 – 23:00',v_dir:'Yol Tarifi',ph:'Fotoğraf eklenecek',r_eye:'Yorumlar',ab_menu:'Menü',ab_wifi:'Wi-Fi',ab_call:'Ara',ab_dir:'Yol Tarifi',ab_wa:'WhatsApp',m_wifi:'Wi-Fi Şifresi',w_t:'Wi-Fi',w_ssid:'Ağ adı',w_pass:'Şifre',w_copy:'Kopyala',w_copied:'Kopyalandı',w_none:'Wi-Fi şifresi için lütfen garsonumuza danışın.',r_cta:'Google’da Değerlendirin',r_t:'Misafirlerimiz <em>ne diyor?</em>',r_by:'Misafirimiz',q_eye:'Misafirlerimiz',q_t:'Sofranın <em>konukları</em>',q_p:'Bizi tercih eden, sofrayı bizimle paylaşan değerli misafirlerimiz.',b_eye:'Aile dostu',b_t:'Restoranımız <em>alkolsüzdür</em>',b_p:'Ailece güvenle tercih edebileceğiniz, huzurlu bir sofra anlayışı.'},
- en:{n_about:'About',n_sig:'Highlights',n_menu:'Menu',n_gal:'Gallery',n_visit:'Visit',n_guest:'Guests',h_eye:'Atakum · Samsun',h_t1:'From the sea',h_t2:'to the table',h_p:'The day\'s fresh catch, carefully prepared meze and the purest flavours of the sea.',h_res:'Reserve',h_scroll:'Discover',wa:'Reserve',a_eye:'About us',a_t:'Nothing more, nothing less. A fresh fish, <em>the right fire</em> and a slice of lemon.',a_eye2:'Our approach',a_h:'Refinement in <em>simplicity</em>',a_p:'In the heart of Atakum we serve the day\'s catch grilled or pan-fried, with rocket, onion and lemon. From soup to dessert, everything is made with family warmth.',s_eye:'Highlights',s_t:'Signature <em>dishes</em>',m_eye:'Menu',m_t:'Our <em>menu</em>',m_note:'Prices are taken from the current menu and may change. Please ask our staff about allergens.',g_eye:'Gallery',g_t:'Moments from <em>the table</em>',v_eye:'Visit',v_t:'We look <em>forward to you</em>',v_addr:'Address',v_phone:'Phone',v_hours:'Opening hours',v_hours_v:'Monday: Closed<br>Tue – Sun: 11:00 – 23:00',v_dir:'Directions',ph:'Photo to come',r_eye:'Reviews',ab_menu:'Menu',ab_wifi:'Wi-Fi',ab_call:'Call',ab_dir:'Directions',ab_wa:'WhatsApp',m_wifi:'Wi-Fi Password',w_t:'Wi-Fi',w_ssid:'Network',w_pass:'Password',w_copy:'Copy',w_copied:'Copied',w_none:'Please ask our staff for the Wi-Fi password.',r_cta:'Review us on Google',r_t:'What our <em>guests say</em>',r_by:'Our guest',q_eye:'Our guests',q_t:'Guests at <em>our table</em>',q_p:'The dear guests who chose us and shared our table.',b_eye:'Family friendly',b_t:'Our restaurant is <em>alcohol-free</em>',b_p:'A peaceful table where the whole family can dine with confidence.'}
-};
-let L='tr',cur='corba';
-const $=s=>document.querySelector(s);
-const fmt=n=>n+' ₺';
+  <section class="visit" id="ulasim">
+    <div class="wrap">
+      <div class="center">
+        <p class="eyebrow" data-i="v_eye">Ulaşım</p>
+        <div class="rule"></div>
+        <h2 data-i="v_t">Sizi <em>bekliyoruz</em></h2>
+      </div>
+      <div class="grid">
+        <div class="info">
+          <div>
+            <h3 data-i="v_addr">Adres</h3>
+            <p>Cumhuriyet Mahallesi, Recep Tayyip Erdoğan Bulvarı No:20A, 55200 Atakum / Samsun</p>
+          </div>
+          <div>
+            <h3 data-i="v_phone">Telefon</h3>
+            <p><a href="tel:+905412005553">0 (541) 200 55 53</a><br><a href="tel:+903624355355">0 (362) 435 53 55</a>
+            </p>
+          </div>
+          <div>
+            <h3 data-i="v_hours">Çalışma saatleri</h3>
+            <p><!-- TODO: gerçek saatleri yaz --><span data-i="v_hours_v">Pazartesi: Kapalı<br>Salı – Pazar: 11:00 –
+                23:00</span></p>
+          </div>
+          <div>
+            <h3>Instagram</h3>
+            <p><a class="ig" href="https://www.instagram.com/suatinyeri" aria-label="Instagram: suatinyeri"><svg
+                  viewBox="0 0 24 24" width="1.15em" height="1.15em" fill="none" stroke="currentColor"
+                  stroke-width="1.7" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4.2" />
+                  <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+                </svg><span>suatinyeri</span></a></p>
+          </div>
+        </div>
+        <div class="map">
+          <svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#c9a45c"
+            stroke-width=".8">
+            <path
+              d="M-10 110C80 80 140 150 220 120S340 60 420 100M-10 230C90 200 160 270 250 240S350 190 420 220M130 -10C120 100 160 180 140 430M290 -10C310 90 270 200 300 430" />
+          </svg>
+          <div class="inner">
+            <div class="pin"></div>
+            <h3>Suat'ın Yeri</h3>
+            <p>Atakum · Samsun</p>
+            <a class="btn" href="https://goo.gl/maps/Tbhee81TEWsdTqAJ8" data-i="v_dir">Yol Tarifi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-function ph(img='',tilt=0){
-  const g=`radial-gradient(ellipse at 50% 110%,#1d6a8a 0%,transparent 70%),linear-gradient(160deg,#12335c,#0a2342)`;
-  const style=img?`background:url('${img}') center/cover no-repeat`:`background:${g}`;
-  return `<div class="ph ${img?'has-img':''}" data-img="${img}" style="${style}">
+  <footer>
+    <div class="brand"><span class="coinw"><span class="coin"><img src="img/logo.png"
+            alt="Öz Balık Restaurant logosu"><img class="bk" src="img/logo.png" alt="" aria-hidden="true"></span></span>
+      <div><b>Suat'ın Yeri</b><span>Öz Balık Restaurant</span></div>
+    </div>
+    <div class="sep"></div>
+    <div>© 2020 · Atakum, Samsun · <a class="ig" href="https://www.instagram.com/suatinyeri"
+        aria-label="Instagram: suatinyeri"><svg viewBox="0 0 24 24" width="1.15em" height="1.15em" fill="none"
+          stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5" />
+          <circle cx="12" cy="12" r="4.2" />
+          <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+        </svg><span>suatinyeri</span></a></div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/905412005553" data-i="wa">Rezervasyon</a>
+
+  <script>
+    /* ---------- MENÜ VERİSİ (suatinyeri.com'dan alındı) ---------- */
+    const MENU = [
+      { id: 'corba', tr: 'Çorbalar', en: 'Soups', items: [['Balık Çorbası (Az)', '', 180, 'img/t_corba.jpg'], ['Balık Çorbası (Tam)', '', 230, 'img/t_corba.jpg'], ['Mercimek Çorbası (Az)', '', 150], ['Mercimek Çorbası (Tam)', '', 180]] },
+      { id: 'ara', tr: 'Ara Sıcaklar', en: 'Hot Starters', items: [['Kalamar', 'Tarator sosu ile', 590], ['Karides Tava', 'Bol tereyağı ve sarımsak ile', 590], ['Levrek Çıtlama', 'Tereyağı, sarımsak ve levrek ile', 745, 'img/t_levrek.jpg'], ['Enginar Kalbi', '', 395], ['Hamsili Pilav', '', 600, 'img/t_hamsilipilav.jpg']] },
+      { id: 'meze', tr: 'Mezeler', en: 'Meze', items: [['Havuç Tarator', '', 100, 'img/t_tarator.jpg'], ['Cacık', '', 100]] },
+      { id: 'salata', tr: 'Salatalar', en: 'Salads', items: [['Izgara Tavuk Salata', '', 380], ['Somon Salata', '', 420], ['Ton Balıklı Salata', '', 350], ['Roka Salatası', 'Marul, roka, domates ve beyaz peynir', 210], ['Yeşil Salata', 'Marul, roka, maydanoz ve yeşil soğan', 180], ['Mevsim Salatası', 'Marul, havuç ve soğan', 180], ['Çoban Salatası', 'Salatalık, domates ve soğan', 180], ['Piyaz', '', 340], ['Duble Roka Salatası', '', 290], ['Duble Mevsim Salatası', '', 260], ['Duble Yeşil Salata', '', 260], ['Duble Çoban Salatası', '', 260]] },
+      { id: 'ekmek', tr: 'Ekmek Arası', en: 'Sandwiches', items: [['Ekmek Arası Somon', 'Somon, marul ve soğan ile', 340], ['Ekmek Arası Uskumru', 'Eminönü usulü: uskumru, marul ve soğan', 250, 'img/t_uskumru.jpg'], ['Ekmek Arası Köfte', '', 320], ['Ekmek Arası Kalamar', 'Roka, domates, tarator sosu ile', 350, 'img/t_kalamar.jpg']] },
+      { id: 'izgara', tr: 'Izgara Balıklar', en: 'Grilled Fish', items: [['Hamsi', 'Roka, soğan söğüş, limon ile', 485], ['Barbun', 'Roka, soğan söğüş, limon ile', 850], ['Somon', 'Roka, soğan söğüş, limon ile', 590], ['Levrek', 'Roka, soğan söğüş, limon ile', 690], ['Çipura', 'Roka, soğan söğüş, limon ile', 640], ['Somon Şiş', '', 690], ['Palamut', 'Roka, soğan söğüş, limon ile', 450], ['Sarıkanat', 'Roka, soğan söğüş, limon ile', 900], ['Lüfer', '', 560], ['Uskumru', 'Roka, soğan söğüş, limon ile', 640], ['Sargan', 'Soğan söğüş, limon, turşu kavurması, mısır ekmeği ile', 500], ['İstavrit', '', 380], ['Tirsi', 'Soğan söğüş, limon ile', 360], ['Çinekop', 'Roka, soğan söğüş, limon ile', 840], ['Kötek', 'Soğan söğüş, limon ile', 460]] },
+      { id: 'tava', tr: 'Tava Balıklar', en: 'Pan-Fried Fish', items: [['Mezgit', 'Roka, soğan söğüş, limon ile', 850], ['Barbun', 'Roka, soğan söğüş, limon ile', 850], ['Somon', 'Roka, soğan söğüş, limon ile', 590, 'img/t_somon.jpg'], ['Levrek', 'Roka, soğan söğüş, limon ile', 690], ['Çipura', 'Roka, soğan söğüş, limon ile', 640], ['Hamsi', 'Roka, soğan söğüş, limon ile', 485], ['Palamut', 'Roka, soğan söğüş, limon ile', 450], ['İstavrit', 'Roka, soğan söğüş, limon ile', 380], ['Sargan', 'Soğan söğüş, limon, turşu kavurması, mısır ekmeği ile', 500], ['Kalkan', 'Mevsim salatası, soğan söğüş, limon, turşu kavurması, mısır ekmeği ile', 1000]] },
+      { id: 'et', tr: 'Izgara Etler', en: 'Grilled Meats', items: [['Izgara Köfte', 'Patates kızartması ve şehriyeli pilav ile', 590, 'img/t_kofte.jpg'], ['Kalem Kuzu Pirzola', 'Közlenmiş domates ve biber ile', 790, 'img/t_kuzu.jpg'], ['Tavuk Pirzola', 'Patates kızartması ve şehriyeli pilav ile', 540, 'img/t_tavuk.jpg']] },
+      { id: 'yan', tr: 'Yan Ürünler', en: 'Sides', items: [['Patates Kızartması', '', 150], ['Pilav', '', 120], ['Fırında Levrek Ekşili', 'Günlük taze sebzelerle kavrulup fırında levrekle birleşir (45 dk pişirme süresi)', 650]] },
+      { id: 'tatli', tr: 'Tatlılar', en: 'Desserts', items: [['Kabak Tatlısı', 'Tahin ve ceviz ile', 260, 'img/t_tatli.jpg'], ['Sıcak Helva', '', 260], ['Helva', '', 140], ['Ekmek Kadayıfı', 'Kaymak ile', 220]] },
+      { id: 'soguk', tr: 'Soğuk İçecekler', en: 'Cold Drinks', items: [['Meyve Suyu', '', 80], ['Şalgam', '', 80], ['Küçük Su', '', 40], ['Büyük Su', '', 60], ['Sade Soda', '', 50], ['Meyveli Soda', '', 60], ['Ayran', '', 50]] },
+      { id: 'sicak', tr: 'Sıcak İçecekler', en: 'Hot Drinks', items: [['Türk Kahvesi', '', 80], ['Çay', '', 30]] }
+    ];
+    /* Öne çıkanlar: [ad, açıklama, fiyat] — görsel için ph() içindeki img parametresini doldurun */
+    const SIG = [
+      ['Somon Tava', 'Roka, soğan söğüş ve limon ile', 590, 'img/somon.jpg'],
+      ['Ekmek Arası Uskumru', 'Eminönü usulü; marul ve soğanla', 250, 'img/uskumru.jpg'],
+      ['Ekmek Arası Kalamar', 'Roka, domates ve tarator sosuyla', 350, 'img/kalamar.jpg'],
+      ['Kabak Tatlısı', 'Tahin ve cevizle', 260, 'img/tatli.jpg']
+    ];
+    const G = ['img/g1.jpg', 'img/g2.jpg', 'img/g3.jpg', 'img/g4.jpg', 'img/g5.jpg', 'img/g6.jpg'];
+    const T = {
+      tr: { n_about: 'Hakkımızda', n_sig: 'Lezzetler', n_menu: 'Menü', n_gal: 'Galeri', n_visit: 'Ulaşım', n_guest: 'Misafirlerimiz', h_eye: 'Atakum · Samsun', h_t1: 'Denizden', h_t2: 'sofraya', h_p: 'Günün taze balığı, özenle hazırlanan mezeler ve denizin en yalın lezzetleri.', h_res: 'Rezervasyon', h_scroll: 'Keşfet', wa: 'Rezervasyon', a_eye: 'Hakkımızda', a_t: 'Ne fazla, ne eksik. Taze bir balık, <em>doğru ateş</em> ve bir dilim limon.', a_eye2: 'Anlayışımız', a_h: 'Sadelikte <em>incelik</em>', a_p: 'Atakum\'un kalbinde, her gün gelen balıkları ızgarada ya da tavada; roka, soğan ve limonla servis ediyoruz. Çorbadan tatlıya tüm menümüz aile sıcaklığıyla hazırlanır.', s_eye: 'Öne çıkanlar', s_t: 'Seçkin <em>lezzetler</em>', m_eye: 'Menü', m_t: 'Lezzet <em>listemiz</em>', m_note: 'Fiyatlar güncel menüden alınmıştır, değişebilir. Alerjen bilgisi için lütfen garsonumuza danışın.', g_eye: 'Galeri', g_t: 'Sofradan <em>kareler</em>', v_eye: 'Ulaşım', v_t: 'Sizi <em>bekliyoruz</em>', v_addr: 'Adres', v_phone: 'Telefon', v_hours: 'Çalışma saatleri', v_hours_v: 'Pazartesi: Kapalı<br>Salı – Pazar: 11:00 – 23:00', v_dir: 'Yol Tarifi', ph: 'Fotoğraf eklenecek', r_eye: 'Yorumlar', ab_menu: 'Menü', ab_wifi: 'Wi-Fi', ab_call: 'Ara', ab_dir: 'Yol Tarifi', ab_wa: 'WhatsApp', m_wifi: 'Wi-Fi Şifresi', w_t: 'Wi-Fi', w_ssid: 'Ağ adı', w_pass: 'Şifre', w_copy: 'Kopyala', w_copied: 'Kopyalandı', w_none: 'Wi-Fi şifresi için lütfen garsonumuza danışın.', r_cta: 'Google’da Değerlendirin', r_t: 'Misafirlerimiz <em>ne diyor?</em>', r_by: 'Misafirimiz', q_eye: 'Misafirlerimiz', q_t: 'Sofranın <em>konukları</em>', q_p: 'Bizi tercih eden, sofrayı bizimle paylaşan değerli misafirlerimiz.', b_eye: 'Aile dostu', b_t: 'Restoranımız <em>alkolsüzdür</em>', b_p: 'Ailece güvenle tercih edebileceğiniz, huzurlu bir sofra anlayışı.' },
+      en: { n_about: 'About', n_sig: 'Highlights', n_menu: 'Menu', n_gal: 'Gallery', n_visit: 'Visit', n_guest: 'Guests', h_eye: 'Atakum · Samsun', h_t1: 'From the sea', h_t2: 'to the table', h_p: 'The day\'s fresh catch, carefully prepared meze and the purest flavours of the sea.', h_res: 'Reserve', h_scroll: 'Discover', wa: 'Reserve', a_eye: 'About us', a_t: 'Nothing more, nothing less. A fresh fish, <em>the right fire</em> and a slice of lemon.', a_eye2: 'Our approach', a_h: 'Refinement in <em>simplicity</em>', a_p: 'In the heart of Atakum we serve the day\'s catch grilled or pan-fried, with rocket, onion and lemon. From soup to dessert, everything is made with family warmth.', s_eye: 'Highlights', s_t: 'Signature <em>dishes</em>', m_eye: 'Menu', m_t: 'Our <em>menu</em>', m_note: 'Prices are taken from the current menu and may change. Please ask our staff about allergens.', g_eye: 'Gallery', g_t: 'Moments from <em>the table</em>', v_eye: 'Visit', v_t: 'We look <em>forward to you</em>', v_addr: 'Address', v_phone: 'Phone', v_hours: 'Opening hours', v_hours_v: 'Monday: Closed<br>Tue – Sun: 11:00 – 23:00', v_dir: 'Directions', ph: 'Photo to come', r_eye: 'Reviews', ab_menu: 'Menu', ab_wifi: 'Wi-Fi', ab_call: 'Call', ab_dir: 'Directions', ab_wa: 'WhatsApp', m_wifi: 'Wi-Fi Password', w_t: 'Wi-Fi', w_ssid: 'Network', w_pass: 'Password', w_copy: 'Copy', w_copied: 'Copied', w_none: 'Please ask our staff for the Wi-Fi password.', r_cta: 'Review us on Google', r_t: 'What our <em>guests say</em>', r_by: 'Our guest', q_eye: 'Our guests', q_t: 'Guests at <em>our table</em>', q_p: 'The dear guests who chose us and shared our table.', b_eye: 'Family friendly', b_t: 'Our restaurant is <em>alcohol-free</em>', b_p: 'A peaceful table where the whole family can dine with confidence.' }
+    };
+    let L = 'tr', cur = 'corba';
+    const $ = s => document.querySelector(s);
+    const fmt = n => n + ' ₺';
+
+    function ph(img = '', tilt = 0) {
+      const g = `radial-gradient(ellipse at 50% 110%,#1d6a8a 0%,transparent 70%),linear-gradient(160deg,#12335c,#0a2342)`;
+      const style = img ? `background:url('${img}') center/cover no-repeat` : `background:${g}`;
+      return `<div class="ph ${img ? 'has-img' : ''}" data-img="${img}" style="${style}">
    <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice"><use href="#fishline" x="12" y="36" width="76" height="38" style="color:rgba(201,164,92,.55)" transform="rotate(${tilt} 50 50)"/></svg>
    <span class="tag">${T[L].ph}</span></div>`;
-}
-const RV=[
- {tr:'Balık yemek istiyorsanız mutlaka uğrayın.',en:'If you want fish, you have to stop by.'},
- {tr:'Her gün taze balık için geliyorum',en:'I come every day for the fresh fish.'},
- {tr:'Samsunun en iyi restaurantlarından biri.',en:'One of the best restaurants in Samsun.'},
- {tr:'Yediğim en lezzetli balıktı',en:'The most delicious fish I have ever had.'},
- {tr:'Canım balık çektiğinde direkt buraya geliyorum.',en:'Whenever I crave fish, I come straight here.'}
-];
-const STAR='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
-function renderReviews(){
-  $('#reviewGrid').innerHTML=RV.map(r=>`<figure class="rcard rv"><div class="stars" aria-label="5/5">${STAR.repeat(5)}</div><blockquote>${r[L]}</blockquote><figcaption>${T[L].r_by}</figcaption></figure>`).join('');
-  document.querySelectorAll('#reviewGrid .rv').forEach(el=>io.observe(el));
-}
-const ICO={"corba": "<path d=\"M3 11h18a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8z\"/><path d=\"M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5\"/>", "ara": "<path d=\"M3 12c3-5 9-6 13-3l5-3v12l-5-3c-4 3-10 2-13-3z\"/><circle cx=\"8\" cy=\"11\" r=\".8\" fill=\"currentColor\"/>", "meze": "<path d=\"M3 13h18M5 13a7 6 0 0 0 14 0\"/><path d=\"M12 7c2.5 0 4 1.5 4 3.5-2.5 0-4-1.5-4-3.5z\"/>", "salata": "<path d=\"M3 12h18a9 7 0 0 1-18 0z\"/><path d=\"M7 12c0-3 2-5.5 5-7 3 1.5 5 4 5 7\"/>", "ekmek": "<path d=\"M4 10c0-3 3.5-5 8-5s8 2 8 5z\"/><path d=\"M3 13h18M4.5 16h15\"/><path d=\"M5 16c0 2 2 3 4 3h6c2 0 4-1 4-3\"/>", "izgara": "<path d=\"M3 12c3-5 9-6 13-3l5-3v12l-5-3c-4 3-10 2-13-3z\"/><circle cx=\"8\" cy=\"11\" r=\".8\" fill=\"currentColor\"/>", "tava": "<path d=\"M3 12c3-5 9-6 13-3l5-3v12l-5-3c-4 3-10 2-13-3z\"/><circle cx=\"8\" cy=\"11\" r=\".8\" fill=\"currentColor\"/>", "et": "<path d=\"M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10\"/><path d=\"M17 3c-2 2-3 5-3 8h3v10\"/>", "yan": "<path d=\"M6 10l1.5 10h9L18 10z\"/><path d=\"M8 10V4M11 10V3M14 10V4M17 10V5\"/>", "tatli": "<path d=\"M3 18h18v-4L12 7 3 14z\"/><path d=\"M3 14h18\"/>", "soguk": "<path d=\"M7 4h10l-1.5 16h-7z\"/><path d=\"M7.5 9h9\"/>", "sicak": "<path d=\"M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z\"/><path d=\"M16 10h2a2 2 0 0 1 0 4h-2\"/><path d=\"M8 3c-1 1 1 2 0 3M12 3c-1 1 1 2 0 3\"/>"};
-const phIcon=id=>`<span class="th-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">${ICO[id]||''}</svg></span>`;
-function renderTabs(){
-  const small=matchMedia('(max-width:560px)').matches;
-  const ROWS=small?[['corba','ara','meze','salata'],['ekmek','izgara','tava'],['et','yan'],['tatli','soguk','sicak']]
-                  :[['corba','ara','meze','salata','ekmek'],['izgara','tava','et','yan'],['tatli','soguk','sicak']];
-  $('#tabs').innerHTML=ROWS.map(r=>`<div class="tabrow">${r.map(id=>{const c=MENU.find(x=>x.id===id);return `<button class="tab ${c.id===cur?'on':''}" data-id="${c.id}">${c[L]}</button>`}).join('')}</div>`).join('');
-  const c=MENU.find(x=>x.id===cur);
-  $('#items').innerHTML=c.items.map(([n,d,p,im])=>`<div class="item has-th">${im?`<img class="th" src="${im}" data-v="${im.replace('/t_','/v_')}" data-n="${n}" alt="${n}" tabindex="0" loading="lazy">`:phIcon(c.id)}<div class="main"><div class="row"><h4>${n}</h4><span class="dots"></span><span class="p">${fmt(p)}</span></div>${d?`<small>${d}</small>`:''}</div></div>`).join('');
-}
-function renderCards(){
-  const t=[-6,4,-3,6];
-  $('#cards').innerHTML=SIG.map(([n,d,p,im],i)=>`<div class="card rv">${ph(im,t[i])}<h3>${n}</h3><p>${d}</p></div>`).join('');
-  document.querySelectorAll('#cards .rv').forEach(el=>io.observe(el));
-}
-function renderGallery(){
-  const t=[-5,3,-8,6,0,-2];
-  $('#gallery').innerHTML=G.map((g,i)=>ph(g,t[i])).join('');
-}
-function renderStatic(){
-  document.querySelectorAll('[data-i]').forEach(e=>{const v=T[L][e.dataset.i];if(v!==undefined)e.innerHTML=v;});
-  document.documentElement.lang=L;
-  $('#lang').textContent=L==='tr'?'EN':'TR';
-}
-function renderAll(){
-  renderTabs();renderCards();renderGallery();renderReviews();
-  const ab=document.querySelector('[data-label="about"]'); if(ab)ab.outerHTML=ph('img/about.jpg',-4).replace('class="ph','data-label="about" class="ph');
-  renderStatic();
-}
-document.addEventListener('click',e=>{
-  const t=e.target.closest('.tab'); if(t){cur=t.dataset.id;renderTabs();}
-  if(e.target.closest('#lang')){L=L==='tr'?'en':'tr';renderAll();}
-  if(e.target.closest('#burger'))$('#links').classList.toggle('open');
-  if(e.target.closest('.links a'))$('#links').classList.remove('open');
-});
-let _small=matchMedia('(max-width:560px)').matches;addEventListener('resize',()=>{const m=matchMedia('(max-width:560px)').matches;if(m!==_small){_small=m;renderTabs();}});
-addEventListener('scroll',()=>$('#nav').classList.toggle('solid',scrollY>40));
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
-renderAll();
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+    }
+    const RV = [
+      { tr: 'Balık yemek istiyorsanız mutlaka uğrayın.', en: 'If you want fish, you have to stop by.' },
+      { tr: 'Her gün taze balık için geliyorum', en: 'I come every day for the fresh fish.' },
+      { tr: 'Samsunun en iyi restaurantlarından biri.', en: 'One of the best restaurants in Samsun.' },
+      { tr: 'Yediğim en lezzetli balıktı', en: 'The most delicious fish I have ever had.' },
+      { tr: 'Canım balık çektiğinde direkt buraya geliyorum.', en: 'Whenever I crave fish, I come straight here.' }
+    ];
+    const STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
+    function renderReviews() {
+      $('#reviewGrid').innerHTML = RV.map(r => `<figure class="rcard rv"><div class="stars" aria-label="5/5">${STAR.repeat(5)}</div><blockquote>${r[L]}</blockquote><figcaption>${T[L].r_by}</figcaption></figure>`).join('');
+      document.querySelectorAll('#reviewGrid .rv').forEach(el => io.observe(el));
+    }
+    const ICO = { "corba": "<path d=\"M3 11h18a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8z\"/><path d=\"M8 3.5c-1 1 1 2 0 3.5M12 3.5c-1 1 1 2 0 3.5M16 3.5c-1 1 1 2 0 3.5\"/>", "ara": "<path d=\"M3 12c3-5 9-6 13-3l5-3v12l-5-3c-4 3-10 2-13-3z\"/><circle cx=\"8\" cy=\"11\" r=\".8\" fill=\"currentColor\"/>", "meze": "<path d=\"M3 13h18M5 13a7 6 0 0 0 14 0\"/><path d=\"M12 7c2.5 0 4 1.5 4 3.5-2.5 0-4-1.5-4-3.5z\"/>", "salata": "<path d=\"M3 12h18a9 7 0 0 1-18 0z\"/><path d=\"M7 12c0-3 2-5.5 5-7 3 1.5 5 4 5 7\"/>", "ekmek": "<path d=\"M4 10c0-3 3.5-5 8-5s8 2 8 5z\"/><path d=\"M3 13h18M4.5 16h15\"/><path d=\"M5 16c0 2 2 3 4 3h6c2 0 4-1 4-3\"/>", "izgara": "<path d=\"M3 12c3-5 9-6 13-3l5-3v12l-5-3c-4 3-10 2-13-3z\"/><circle cx=\"8\" cy=\"11\" r=\".8\" fill=\"currentColor\"/>", "tava": "<path d=\"M3 12c3-5 9-6 13-3l5-3v12l-5-3c-4 3-10 2-13-3z\"/><circle cx=\"8\" cy=\"11\" r=\".8\" fill=\"currentColor\"/>", "et": "<path d=\"M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10\"/><path d=\"M17 3c-2 2-3 5-3 8h3v10\"/>", "yan": "<path d=\"M6 10l1.5 10h9L18 10z\"/><path d=\"M8 10V4M11 10V3M14 10V4M17 10V5\"/>", "tatli": "<path d=\"M3 18h18v-4L12 7 3 14z\"/><path d=\"M3 14h18\"/>", "soguk": "<path d=\"M7 4h10l-1.5 16h-7z\"/><path d=\"M7.5 9h9\"/>", "sicak": "<path d=\"M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z\"/><path d=\"M16 10h2a2 2 0 0 1 0 4h-2\"/><path d=\"M8 3c-1 1 1 2 0 3M12 3c-1 1 1 2 0 3\"/>" };
+    const phIcon = id => `<span class="th-ph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">${ICO[id] || ''}</svg></span>`;
+    function renderTabs() {
+      const small = matchMedia('(max-width:560px)').matches;
+      const ROWS = small ? [['corba', 'ara', 'meze', 'salata'], ['ekmek', 'izgara', 'tava'], ['et', 'yan'], ['tatli', 'soguk', 'sicak']]
+        : [['corba', 'ara', 'meze', 'salata', 'ekmek'], ['izgara', 'tava', 'et', 'yan'], ['tatli', 'soguk', 'sicak']];
+      $('#tabs').innerHTML = ROWS.map(r => `<div class="tabrow">${r.map(id => { const c = MENU.find(x => x.id === id); return `<button class="tab ${c.id === cur ? 'on' : ''}" data-id="${c.id}">${c[L]}</button>` }).join('')}</div>`).join('');
+      const c = MENU.find(x => x.id === cur);
+      $('#items').innerHTML = c.items.map(([n, d, p, im]) => `<div class="item has-th">${im ? `<img class="th" src="${im}" data-v="${im.replace('/t_', '/v_')}" data-n="${n}" alt="${n}" tabindex="0" loading="lazy">` : phIcon(c.id)}<div class="main"><div class="row"><h4>${n}</h4><span class="dots"></span><span class="p">${fmt(p)}</span></div>${d ? `<small>${d}</small>` : ''}</div></div>`).join('');
+    }
+    function renderCards() {
+      const t = [-6, 4, -3, 6];
+      $('#cards').innerHTML = SIG.map(([n, d, p, im], i) => `<div class="card rv">${ph(im, t[i])}<h3>${n}</h3><p>${d}</p></div>`).join('');
+      document.querySelectorAll('#cards .rv').forEach(el => io.observe(el));
+    }
+    function renderGallery() {
+      const t = [-5, 3, -8, 6, 0, -2];
+      $('#gallery').innerHTML = G.map((g, i) => ph(g, t[i])).join('');
+    }
+    function renderStatic() {
+      document.querySelectorAll('[data-i]').forEach(e => { const v = T[L][e.dataset.i]; if (v !== undefined) e.innerHTML = v; });
+      document.documentElement.lang = L;
+      $('#lang').textContent = L === 'tr' ? 'EN' : 'TR';
+    }
+    function renderAll() {
+      renderTabs(); renderCards(); renderGallery(); renderReviews();
+      const ab = document.querySelector('[data-label="about"]'); if (ab) ab.outerHTML = ph('img/about.jpg', -4).replace('class="ph', 'data-label="about" class="ph');
+      renderStatic();
+    }
+    document.addEventListener('click', e => {
+      const t = e.target.closest('.tab'); if (t) { cur = t.dataset.id; renderTabs(); }
+      if (e.target.closest('#lang')) { L = L === 'tr' ? 'en' : 'tr'; renderAll(); }
+      if (e.target.closest('#burger')) $('#links').classList.toggle('open');
+      if (e.target.closest('.links a')) $('#links').classList.remove('open');
+    });
+    let _small = matchMedia('(max-width:560px)').matches; addEventListener('resize', () => { const m = matchMedia('(max-width:560px)').matches; if (m !== _small) { _small = m; renderTabs(); } });
+    addEventListener('scroll', () => $('#nav').classList.toggle('solid', scrollY > 40));
+    const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target) } }), { threshold: .1 });
+    renderAll();
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
-const GU=[['img/k1.jpg','50% 50%'],['img/k3.jpg','50% 30%'],['img/k4.jpg','50% 50%'],['img/k2.jpg','50% 40%'],['img/k5.jpg','50% 55%'],['img/k6.jpg','50% 58%']];
-$('#guestGrid').innerHTML=GU.map(([g,pos])=>`<figure class="rv"><img src="${g}" style="object-position:${pos}" alt="Misafirlerimiz" loading="lazy"></figure>`).join('');
-document.querySelectorAll('#guestGrid .rv').forEach(el=>io.observe(el));
-const lb=$('#lb');
-document.addEventListener('click',e=>{
-  const im=e.target.closest('#guestGrid img');
-  if(im){lb.querySelector('img').src=im.src;$('#lbc').textContent='';lb.classList.add('open');return;}
-  const th=e.target.closest('.th');
-  if(th){lb.querySelector('img').src=th.dataset.v;$('#lbc').textContent=th.dataset.n;lb.classList.add('open');return;}
-  if(e.target.closest('#lb'))lb.classList.remove('open');
-});
-addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open');if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('th')){e.preventDefault();e.target.click();}});
+    const GU = [['img/k1.jpg', '50% 50%'], ['img/k3.jpg', '50% 30%'], ['img/k4.jpg', '50% 50%'], ['img/k2.jpg', '50% 40%'], ['img/k5.jpg', '50% 55%'], ['img/k6.jpg', '50% 58%']];
+    $('#guestGrid').innerHTML = GU.map(([g, pos]) => `<figure class="rv"><img src="${g}" style="object-position:${pos}" alt="Misafirlerimiz" loading="lazy"></figure>`).join('');
+    document.querySelectorAll('#guestGrid .rv').forEach(el => io.observe(el));
+    const lb = $('#lb');
+    document.addEventListener('click', e => {
+      const im = e.target.closest('#guestGrid img');
+      if (im) { lb.querySelector('img').src = im.src; $('#lbc').textContent = ''; lb.classList.add('open'); return; }
+      const th = e.target.closest('.th');
+      if (th) { lb.querySelector('img').src = th.dataset.v; $('#lbc').textContent = th.dataset.n; lb.classList.add('open'); return; }
+      if (e.target.closest('#lb')) lb.classList.remove('open');
+    });
+    addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('th')) { e.preventDefault(); e.target.click(); } });
 
 
-/* ---- AYAR: Wi-Fi bilgisi (şifreyi buraya yazın; boş bırakılırsa garsona yönlendirir) ---- */
-const WIFI={ssid:'',pass:''};
-function openWifi(){
-  const t=T[L],b=$('#wifiBody');
-  b.innerHTML=WIFI.pass
-   ? `${WIFI.ssid?`<div class="wr"><small>${t.w_ssid}</small><b>${WIFI.ssid}</b></div>`:''}<div class="wr"><small>${t.w_pass}</small><b id="wpass">${WIFI.pass}</b></div><button class="btn dk" id="wcopy" type="button">${t.w_copy}</button>`
-   : `<p class="wn">${t.w_none}</p>`;
-  $('#wifiModal').classList.add('open');
-}
-document.addEventListener('click',e=>{
-  if(e.target.closest('[data-wifi]')){openWifi();return;}
-  const c=e.target.closest('#wcopy');
-  if(c){try{navigator.clipboard.writeText(WIFI.pass).then(()=>{c.textContent=T[L].w_copied}).catch(()=>{})}catch(_){}return;}
-  if(e.target.closest('#wifiModal .lbx')||e.target===$('#wifiModal'))$('#wifiModal').classList.remove('open');
-});
-addEventListener('keydown',e=>{if(e.key==='Escape')$('#wifiModal').classList.remove('open');});
+    /* ---- AYAR: Wi-Fi bilgisi (şifreyi buraya yazın; boş bırakılırsa garsona yönlendirir) ---- */
+    const WIFI = { ssid: '', pass: '' };
+    function openWifi() {
+      const t = T[L], b = $('#wifiBody');
+      b.innerHTML = WIFI.pass
+        ? `${WIFI.ssid ? `<div class="wr"><small>${t.w_ssid}</small><b>${WIFI.ssid}</b></div>` : ''}<div class="wr"><small>${t.w_pass}</small><b id="wpass">${WIFI.pass}</b></div><button class="btn dk" id="wcopy" type="button">${t.w_copy}</button>`
+        : `<p class="wn">${t.w_none}</p>`;
+      $('#wifiModal').classList.add('open');
+    }
+    document.addEventListener('click', e => {
+      if (e.target.closest('[data-wifi]')) { openWifi(); return; }
+      const c = e.target.closest('#wcopy');
+      if (c) { try { navigator.clipboard.writeText(WIFI.pass).then(() => { c.textContent = T[L].w_copied }).catch(() => { }) } catch (_) { } return; }
+      if (e.target.closest('#wifiModal .lbx') || e.target === $('#wifiModal')) $('#wifiModal').classList.remove('open');
+    });
+    addEventListener('keydown', e => { if (e.key === 'Escape') $('#wifiModal').classList.remove('open'); });
 
-/* Dış bağlantılar: önizleme çerçevesinde düz bağlantı (çerçeve dışında açar); gerçek sitede yeni sekmede aç */
-try{ if(window.top===window){document.querySelectorAll('a[href^="http"]').forEach(a=>{a.target='_blank';a.rel='noopener'});} }catch(e){}
-</script>
+    /* Dış bağlantılar: önizleme çerçevesinde düz bağlantı (çerçeve dışında açar); gerçek sitede yeni sekmede aç */
+    try { if (window.top === window) { document.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener' }); } } catch (e) { }
+  </script>
 </body>
+
 </html>
